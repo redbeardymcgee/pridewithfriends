@@ -16,21 +16,21 @@
           nodejs_24
 
           # Required to enable the language server
-          # typescript
-          # typescript-language-server
+          typescript
+          typescript-language-server
 
           # We use tailwind
-          # tailwindcss
-          # tailwindcss-language-server
+          tailwindcss
+          tailwindcss-language-server
 
           # Docs are written in mdx
-          # mdx-language-server
+          mdx-language-server
 
           # Includes JSON & HTML language servers
-          # vscode-langservers-extracted
+          vscode-langservers-extracted
 
           # Better & faster than `prettier` and `eslint`
-          # biome
+          biome
         ];
       };
     });
