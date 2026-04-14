@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router"
+import { createFileRoute, Link } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/setup")({
   component: RouteComponent,
@@ -15,7 +15,11 @@ function ExampleText({ text }: { text: string }) {
 function CampaignSetup() {
   return (
     <div className="m-5">
-      <h2 className="text-xl text-cyan-300">Campaign Setup</h2>
+      <h2 className="text-xl text-cyan-300" id="campaign-setup">
+        <Link hash="campaign-setup" to=".">
+          Campaign Setup
+        </Link>
+      </h2>
       <p>
         If you are a streamer and want to have your own individual donation
         tracker, overlay, incentives and milestones, follow these instructions.
@@ -81,9 +85,13 @@ function CampaignSetup() {
 
 function OverlaySetup() {
   return (
-    <div className="m-5">
-      <h2 className="text-xl text-cyan-300">Overlay Setup</h2>
-      <p className="">
+    <div className="m-5" id="overlay">
+      <h2 className="text-xl text-cyan-300" id="overlay-setup">
+        <Link hash="overlay-setup" to=".">
+          Overlay Setup
+        </Link>
+      </h2>
+      <p>
         Once you have completed the above steps, setup the tracker and overlay.
       </p>
       <br />
@@ -147,7 +155,11 @@ function OverlaySetup() {
 function BotSetup() {
   return (
     <div className="m-5">
-      <h2 className="text-xl text-cyan-500">Bot Setup</h2>
+      <h2 className="text-xl text-cyan-500" id="bot-setup">
+        <Link hash="bot-setup" to=".">
+          Bot Setup
+        </Link>
+      </h2>
       <p>
         A <TutorialText text="Timer" /> message to promote the event during the
         week:
@@ -162,8 +174,10 @@ function BotSetup() {
         Do you use a different bot? Let us know and we will write instructions!
       </p>
       <br />
-      <h3 className="text-lg text-cyan-200">
-        For <strong>StreamElements</strong>:
+      <h3 className="text-lg text-cyan-200" id="streamelements">
+        <Link hash="streamelements" to=".">
+          For <strong>StreamElements</strong>:
+        </Link>
       </h3>
       <ol className="pl-5 list-decimal">
         <li>Login to your StreamElements Dashboard</li>
@@ -192,8 +206,10 @@ function BotSetup() {
         </li>
       </ol>
       <br />
-      <h3 className="text-lg text-cyan-200">
-        For <strong>Nightbot</strong>:
+      <h3 className="text-lg text-cyan-200" id="nightbot">
+        <Link hash="nightbot" to=".">
+          For <strong>Nightbot</strong>:
+        </Link>
       </h3>
       <ol className="pl-5 list-decimal">
         <li>Login to your Nightbot Dashboard</li>
@@ -217,8 +233,10 @@ function BotSetup() {
         </li>
       </ol>
       <br />
-      <h3 className="text-lg text-cyan-200">
-        For <strong>Streamlabs</strong>:
+      <h3 className="text-lg text-cyan-200" id="streamlabs">
+        <Link hash="streamlabs" to=".">
+          For <strong>Streamlabs</strong>:
+        </Link>
       </h3>
       <ol className="pl-5 list-decimal">
         <li>Login to your Streamlabs Dashboard</li>
@@ -253,7 +271,11 @@ function BotSetup() {
 function LinkSetup() {
   return (
     <div className="m-5">
-      <h2 className="text-xl text-cyan-300">Set up your Donation Links!</h2>
+      <h2 className="text-xl text-cyan-300" id="donation-link-setup">
+        <Link hash="donation-link-setup" to=".">
+          Set up your Donation Links!
+        </Link>
+      </h2>
       <ol className="pl-5 list-decimal">
         <li>
           Visit your campaign dashboard by at{" "}
