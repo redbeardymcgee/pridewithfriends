@@ -25,7 +25,7 @@ function CampaignSetup() {
         tracker, overlay, incentives and milestones, follow these instructions.
       </p>
       <br />
-      <ol className="pl-5 list-decimal">
+      <ol className="pl-10 list-decimal">
         <li>
           Click {/* FIXME: Update link for new campaign */}
           <a
@@ -95,7 +95,7 @@ function OverlaySetup() {
         Once you have completed the above steps, setup the tracker and overlay.
       </p>
       <br />
-      <ol className="pl-5 list-decimal">
+      <ol className="pl-10 list-decimal">
         <li>
           From the published campaign dashboard, click{" "}
           <TutorialText text="Overlays" /> on the top bar
@@ -127,7 +127,7 @@ function OverlaySetup() {
         overlay in OBS:
       </p>
       <br />
-      <ul className="pl-5 list-disc">
+      <ul className="pl-10 list-disc">
         <li>
           Use the steps above, starting with the{" "}
           <TutorialText text="Blank Slate" />.
@@ -179,7 +179,7 @@ function BotSetup() {
           For <strong>StreamElements</strong>:
         </Link>
       </h3>
-      <ol className="pl-5 list-decimal">
+      <ol className="pl-10 list-decimal">
         <li>Login to your StreamElements Dashboard</li>
         <li>
           On the left sidebar, click <TutorialText text="BOT" /> to expand the
@@ -211,7 +211,7 @@ function BotSetup() {
           For <strong>Nightbot</strong>:
         </Link>
       </h3>
-      <ol className="pl-5 list-decimal">
+      <ol className="pl-10 list-decimal">
         <li>Login to your Nightbot Dashboard</li>
         <li>
           On the left sidebar, click <TutorialText text="Timers" />
@@ -238,7 +238,7 @@ function BotSetup() {
           For <strong>Streamlabs</strong>:
         </Link>
       </h3>
-      <ol className="pl-5 list-decimal">
+      <ol className="pl-10 list-decimal">
         <li>Login to your Streamlabs Dashboard</li>
         <li>
           On the left sidebar, click <TutorialText text="Cloudbot" />
@@ -276,7 +276,7 @@ function LinkSetup() {
           Set up your Donation Links!
         </Link>
       </h2>
-      <ol className="pl-5 list-decimal">
+      <ol className="pl-10 list-decimal">
         <li>
           Visit your campaign dashboard by at{" "}
           <a
@@ -294,7 +294,7 @@ function LinkSetup() {
         </li>
         <li>
           Use the share or copy buttons to get a valid link
-          <ul className="pl-5 list-disc list-inside">
+          <ul className="pl-10 list-disc list-inside">
             <li>
               <TutorialText text="Share" />{" "}
             </li>
