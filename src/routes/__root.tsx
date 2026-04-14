@@ -45,6 +45,11 @@ function RootDocument({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/*
+          FIXME: There should be a better way than `dangerouslySetInnerHTML`.
+          Tanstack Start includes this example boilerplate and it's probably
+          safe because it's not user-submitted. I just don't like this.
+        */}
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
         <HeadContent />
       </head>
