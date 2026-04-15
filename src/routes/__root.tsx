@@ -6,6 +6,7 @@ import {
   Scripts,
 } from "@tanstack/react-router"
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools"
+import { TooltipProvider } from "#/components/ui/tooltip"
 import Footer from "../components/Footer"
 import Header from "../components/Header"
 import TanStackQueryDevtools from "../integrations/tanstack-query/devtools"
@@ -55,7 +56,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
       <body className="wrap:anywhere font-sans antialiased selection:bg-[rgba(79,184,178,0.24)]">
         <Header />
-        {children}
+        <TooltipProvider>{children}</TooltipProvider>
         <Footer />
         <TanStackDevtools
           config={{

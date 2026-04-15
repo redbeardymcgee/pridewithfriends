@@ -92,6 +92,8 @@ More information on the `Link` component can be found in the [Link documentation
 
 ### Using A Layout
 
+FIXME: This appears outdated. Fixed link, but documentation does not match this section.
+
 In the File Based Routing setup the layout is located in `src/routes/__root.tsx`. Anything you add to the root route will appear in all the routes. The route content will appear in the JSX where you render `{children}` in the `shellComponent`.
 
 Here is an example layout that includes a header:
@@ -127,7 +129,7 @@ export const Route = createRootRoute({
 })
 ```
 
-More information on layouts can be found in the [Layouts documentation](https://tanstack.com/router/latest/docs/framework/react/guide/routing-concepts#layouts).
+More information on layouts can be found in the [Layouts documentation](https://tanstack.com/router/latest/docs/routing/routing-concepts#layout-routes).
 
 ## Server Functions
 

@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router"
 
-export const Route = createFileRoute("/setup")({
+export const Route = createFileRoute("/docs/setup")({
   component: RouteComponent,
 })
 
@@ -318,7 +318,7 @@ function PanelSetup() {
       <h2 className="text-cyan-300 text-xl" id="donation-panel">
         Donation Panel
       </h2>
-      <ol className="list-disc pl-10">
+      <ol className="list-decimal pl-10">
         <li>
           From the Twitch homepage, click your profile icon in the top right to
           open the options menu.
