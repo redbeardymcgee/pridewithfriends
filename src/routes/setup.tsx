@@ -200,10 +200,7 @@ function BotSetup() {
           chat activity without spamming the chatbox (usually about 15 minutes
           is fine)
         </li>
-        <li>
-          Turn the chat lines down to zero (It makes the timers act really weird
-          sometimes)
-        </li>
+        <li>Turn the chat lines down to zero</li>
       </ol>
       <br />
       <h3 className="text-lg text-cyan-200" id="nightbot">
@@ -227,10 +224,7 @@ function BotSetup() {
           Set the interval to a value that suits your stream's chat activity
           without spamming the chatbox (usually about 15 minutes is fine)
         </li>
-        <li>
-          Turn the chat lines down to zero (It makes the timers act really weird
-          sometimes)
-        </li>
+        <li>Turn the chat lines down to zero</li>
       </ol>
       <br />
       <h3 className="text-lg text-cyan-200" id="streamlabs">
