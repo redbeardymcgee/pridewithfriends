@@ -385,18 +385,18 @@ function CampaignTracker() {
         rel="noreferrer"
         target="_blank"
       >
-        https://overlays.tiltify.com/1IZ_AXFieYk0RtJOGKsXRJrXD4m7BgcS
+        Overlay
       </a>{" "}
       <span className="text-red-500">WARNING:</span> Old link!
       <br />
       <br />
       <p>
-        For clarity: this overlay shows the total progress of the *entire
-        campaign* and is **not suitable** for streamers who have configured
-        their individual campaign and overlays for the event. For the rest of
-        you who are streaming for the event but not setting up your own
-        overlays, you can use this to let your viewers track the total progress
-        live as they hang out with you.
+        This overlay shows the total progress of the{" "}
+        <strong>entire campaign</strong>. It is <strong>not suitable</strong>{" "}
+        for streamers who have configured their individual campaign and overlays
+        for the event. For the rest of you who are streaming for the event but
+        not setting up your own overlays, you can use this to let your viewers
+        track the total progress live as they hang out with you.
       </p>
     </div>
   )
@@ -412,7 +412,9 @@ function RouteComponent() {
       <BotSetup />
       <br />
       <LinkSetup />
+      <br />
       <PanelSetup />
+      <br />
       <CampaignTracker />
     </div>
   )
