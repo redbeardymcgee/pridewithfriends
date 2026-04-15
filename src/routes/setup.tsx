@@ -312,6 +312,96 @@ function LinkSetup() {
   )
 }
 
+function PanelSetup() {
+  return (
+    <div>
+      <h2 className="text-xl text-cyan-300" id="donation-panel">
+        Donation Panel
+      </h2>
+      <ol className="list-disc pl-10">
+        <li>
+          From the Twitch homepage, click your profile icon in the top right to
+          open the options menu.
+        </li>
+        <li>
+          Click <TutorialText text="Channel" /> to go to your Twitch channel.
+        </li>
+        <li>
+          Click <TutorialText text="About" /> under the video player
+        </li>
+        <li>
+          Click <TutorialText text="Edit Panel" /> under{" "}
+          <TutorialText text="About Me" />
+        </li>
+        <li>Click the large gray plus symbol</li>
+        <li>Click add a text or image panel</li>
+        <li>
+          Click <TutorialText text="Add Image" />
+        </li>
+        <li>TODO: PUT IMAGE FOR DOWNLOAD HERE</li>
+        <li>
+          Fill out the description with a message similar to this, edited to
+          your liking:
+          <p>
+            <ExampleText
+              text="Donate to the Trevor Project directly by clicking this panel!
+                  Donations are non-refundable, but deeply appreciated!"
+            />
+          </p>
+        </li>
+        <li>
+          Fill in the <TutorialText text="Image Links to" /> box with your{" "}
+          <Link hash="donation-link-setup" to=".">
+            donation URL
+          </Link>
+        </li>
+        <li>
+          Click <TutorialText text="Submit" /> and you’re done!
+        </li>
+      </ol>
+    </div>
+  )
+}
+
+function CampaignTracker() {
+  return (
+    <div className="m-5">
+      <h2 className="text-cyan-300 text-xl" id="campaign-tracker">
+        <Link hash="campaign-tracker" to=".">
+          Campaign Tracker
+        </Link>
+      </h2>
+      {/* TODO: Provide more direct instructions */}
+      <p>
+        For those of you who <strong>are</strong> streaming, but do not want to
+        implement your own individual campaign and overlays, you may use this
+        overlay as a <TutorialText text="Browser Source" /> in OBS! Just paste
+        this into the <TutorialText text="Browser Source" /> and set it to{" "}
+        <code>1920x1080</code> resolution
+      </p>
+      <br />
+      <a
+        href="https://overlays.tiltify.com/1IZ_AXFieYk0RtJOGKsXRJrXD4m7BgcS"
+        rel="noreferrer"
+        target="_blank"
+      >
+        https://overlays.tiltify.com/1IZ_AXFieYk0RtJOGKsXRJrXD4m7BgcS
+      </a>{" "}
+      <span className="text-red-500">WARNING:</span> Old link!
+      <br />
+      <br />
+      <p>
+        For clarity: this overlay shows the total progress of the *entire
+        campaign* and is **not suitable** for streamers who have configured
+        their individual campaign and overlays for the event. For the rest of
+        you who are streaming for the event but not setting up your own
+        overlays, you can use this to let your viewers track the total progress
+        live as they hang out with you.
+      </p>
+    </div>
+  )
+}
+
 function RouteComponent() {
   return (
     <div>
@@ -322,6 +412,8 @@ function RouteComponent() {
       <BotSetup />
       <br />
       <LinkSetup />
+      <PanelSetup />
+      <CampaignTracker />
     </div>
   )
 }
