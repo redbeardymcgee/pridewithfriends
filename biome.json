@@ -38,7 +38,12 @@
       "nursery": {
         "useSortedClasses": {
           "fix": "safe",
-          "level": "info"
+          "level": "info",
+          "options": {
+            "functions": [
+              "cn"
+            ]
+          }
         }
       },
       "recommended": true
