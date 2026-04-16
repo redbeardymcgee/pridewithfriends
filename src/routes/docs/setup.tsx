@@ -409,13 +409,13 @@ function RouteComponent() {
       <br />
       <OverlaySetup />
       <br />
+      <CampaignTracker />
+      <br />
       <BotSetup />
       <br />
       <LinkSetup />
       <br />
       <PanelSetup />
-      <br />
-      <CampaignTracker />
     </div>
   )
 }
