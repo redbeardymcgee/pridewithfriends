@@ -15,7 +15,7 @@ function ExampleText({ text }: { text: string }) {
 function CampaignSetup() {
   return (
     <div className="m-5">
-      <h2 className="text-xl text-cyan-300" id="campaign-setup">
+      <h2 className="text-cyan-300 text-xl" id="campaign-setup">
         <Link hash="campaign-setup" to=".">
           Campaign Setup
         </Link>
@@ -25,7 +25,7 @@ function CampaignSetup() {
         tracker, overlay, incentives and milestones, follow these instructions.
       </p>
       <br />
-      <ol className="pl-10 list-decimal">
+      <ol className="list-decimal pl-10">
         <li>
           Click {/* FIXME: Update link for new campaign */}
           <a
@@ -86,7 +86,7 @@ function CampaignSetup() {
 function OverlaySetup() {
   return (
     <div className="m-5" id="overlay">
-      <h2 className="text-xl text-cyan-300" id="overlay-setup">
+      <h2 className="text-cyan-300 text-xl" id="overlay-setup">
         <Link hash="overlay-setup" to=".">
           Overlay Setup
         </Link>
@@ -95,7 +95,7 @@ function OverlaySetup() {
         Once you have completed the above steps, setup the tracker and overlay.
       </p>
       <br />
-      <ol className="pl-10 list-decimal">
+      <ol className="list-decimal pl-10">
         <li>
           From the published campaign dashboard, click{" "}
           <TutorialText text="Overlays" /> on the top bar
@@ -127,7 +127,7 @@ function OverlaySetup() {
         overlay in OBS:
       </p>
       <br />
-      <ul className="pl-10 list-disc">
+      <ul className="list-disc pl-10">
         <li>
           Use the steps above, starting with the{" "}
           <TutorialText text="Blank Slate" />.
@@ -155,7 +155,7 @@ function OverlaySetup() {
 function BotSetup() {
   return (
     <div className="m-5">
-      <h2 className="text-xl text-cyan-500" id="bot-setup">
+      <h2 className="text-cyan-500 text-xl" id="bot-setup">
         <Link hash="bot-setup" to=".">
           Bot Setup
         </Link>
@@ -174,12 +174,12 @@ function BotSetup() {
         Do you use a different bot? Let us know and we will write instructions!
       </p>
       <br />
-      <h3 className="text-lg text-cyan-200" id="streamelements">
+      <h3 className="text-cyan-200 text-lg" id="streamelements">
         <Link hash="streamelements" to=".">
           For <strong>StreamElements</strong>:
         </Link>
       </h3>
-      <ol className="pl-10 list-decimal">
+      <ol className="list-decimal pl-10">
         <li>Login to your StreamElements Dashboard</li>
         <li>
           On the left sidebar, click <TutorialText text="BOT" /> to expand the
@@ -203,12 +203,12 @@ function BotSetup() {
         <li>Turn the chat lines down to zero</li>
       </ol>
       <br />
-      <h3 className="text-lg text-cyan-200" id="nightbot">
+      <h3 className="text-cyan-200 text-lg" id="nightbot">
         <Link hash="nightbot" to=".">
           For <strong>Nightbot</strong>:
         </Link>
       </h3>
-      <ol className="pl-10 list-decimal">
+      <ol className="list-decimal pl-10">
         <li>Login to your Nightbot Dashboard</li>
         <li>
           On the left sidebar, click <TutorialText text="Timers" />
@@ -227,12 +227,12 @@ function BotSetup() {
         <li>Turn the chat lines down to zero</li>
       </ol>
       <br />
-      <h3 className="text-lg text-cyan-200" id="streamlabs">
+      <h3 className="text-cyan-200 text-lg" id="streamlabs">
         <Link hash="streamlabs" to=".">
           For <strong>Streamlabs</strong>:
         </Link>
       </h3>
-      <ol className="pl-10 list-decimal">
+      <ol className="list-decimal pl-10">
         <li>Login to your Streamlabs Dashboard</li>
         <li>
           On the left sidebar, click <TutorialText text="Cloudbot" />
@@ -265,12 +265,12 @@ function BotSetup() {
 function LinkSetup() {
   return (
     <div className="m-5">
-      <h2 className="text-xl text-cyan-300" id="donation-link-setup">
+      <h2 className="text-cyan-300 text-xl" id="donation-link-setup">
         <Link hash="donation-link-setup" to=".">
           Set up your Donation Links!
         </Link>
       </h2>
-      <ol className="pl-10 list-decimal">
+      <ol className="list-decimal pl-10">
         <li>
           Visit your campaign dashboard by at{" "}
           <a
@@ -288,7 +288,7 @@ function LinkSetup() {
         </li>
         <li>
           Use the share or copy buttons to get a valid link
-          <ul className="pl-10 list-disc list-inside">
+          <ul className="list-inside list-disc pl-10">
             <li>
               <TutorialText text="Share" />{" "}
             </li>
@@ -315,7 +315,7 @@ function LinkSetup() {
 function PanelSetup() {
   return (
     <div>
-      <h2 className="text-xl text-cyan-300" id="donation-panel">
+      <h2 className="text-cyan-300 text-xl" id="donation-panel">
         Donation Panel
       </h2>
       <ol className="list-disc pl-10">
