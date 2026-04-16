@@ -12,9 +12,7 @@ function DocsLayoutComponent() {
       <DocsSidebar />
       {/* FIXME: This needs to scroll with the content */}
       <SidebarTrigger />
-      <div>
-        <Outlet />
-      </div>
+      <Outlet />
     </SidebarProvider>
   )
 }
