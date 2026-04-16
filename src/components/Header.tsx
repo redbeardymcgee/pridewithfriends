@@ -24,7 +24,7 @@ export default function Header() {
           >
             About
           </Link>
-          <a className="nav-link" href="/setup">
+          <a className="nav-link" href="/docs/setup">
             Setup
           </a>
         </div>

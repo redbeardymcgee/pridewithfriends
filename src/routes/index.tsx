@@ -27,7 +27,7 @@ function App() {
           </a>
           <a
             className="rounded-full border border-[rgba(23,58,64,0.2)] bg-white/50 px-5 py-2.5 font-semibold text-(--sea-ink) text-sm no-underline transition hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]"
-            href="/setup"
+            href="/docs/setup"
           >
             Streamer Setup
           </a>
