@@ -4,6 +4,7 @@ import { tanstackStart } from "@tanstack/react-start/plugin/vite"
 import viteReact from "@vitejs/plugin-react"
 import { nitro } from "nitro/vite"
 import { defineConfig } from "vite"
+import svgr from "vite-plugin-svgr"
 import tsconfigPaths from "vite-tsconfig-paths"
 
 const config = defineConfig({
@@ -14,6 +15,12 @@ const config = defineConfig({
     tanstackStart(),
     viteReact(),
     nitro(),
+    svgr({
+      svgrOptions: {
+        plugins: ["@svgr/plugin-svgo", "@svgr/plugin-jsx"],
+        svgoConfig: { floatPrecision: 2 },
+      },
+    }),
   ],
 })
 
