@@ -36,18 +36,7 @@ const organizers = [
     youtube: "http://www.youtube.com/@kaosmark2",
   },
   {
-    bio: "hello world",
-    name: "nickysts",
-    pronouns: "",
-    twitch: "https://twitch.tv/nickysts",
-  },
-  {
-    bio: "hello world",
-    name: "Panacea",
-    pronouns: "any/any",
-    twitch: "https://twitch.tv/panacea108",
-  },
-  {
+    avatar: "/avatars/redbeardymcgee.jpg",
     bio: "Local activist & organizer. Retired Spirehead.",
     name: "Redbeardy McGee",
     pronouns: "he/them",
