@@ -105,7 +105,7 @@ function OrganizerCards() {
                   <img
                     alt="YouTube icon"
                     height="50"
-                    src="/public/icons/youtube.png"
+                    src="/icons/youtube.png"
                     width="50"
                   />
                 </a>
