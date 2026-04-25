@@ -70,47 +70,54 @@ function OrganizerCards() {
       {organizers.map((organizer) => {
         return (
           <Card className="w-md bg-slate-700" key={organizer.name}>
-            <CardHeader>
-              {organizer.avatar && (
-                <Avatar>
-                  <AvatarImage src={organizer.avatar} />
-                  <AvatarFallback>
-                    {organizer.name.slice(0, 2).toLowerCase()}
-                  </AvatarFallback>
-                </Avatar>
-              )}
+            {/* FIXME: `flex flex-row` is probably more correct, but messes up the youtube image */}
+            <CardHeader className="grid grid-flow-col grid-rows-1">
+              {/* <CardHeader className="flex flex-row"> */}
               <CardTitle>
-                <span className="font-semibold text-4xl text-neutral-400 text-shadow-lg">
-                  {organizer.name}
-                </span>
-                <div>
-                  <span className="font-light text-neutral-400 text-shadow-lg text-sm italic">
-                    {organizer.pronouns}
-                  </span>
+                <div className="flex flex-row pb-2">
+                  <div className="mr-2">
+                    {organizer.avatar && (
+                      <Avatar className="mb-2" size="lg">
+                        <AvatarImage src={organizer.avatar} />
+                        <AvatarFallback>
+                          {organizer.name.slice(0, 2).toLowerCase()}
+                        </AvatarFallback>
+                      </Avatar>
+                    )}
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="font-semibold text-2xl text-neutral-400 text-shadow-lg">
+                      {organizer.name}
+                    </span>
+                    <span className="font-light text-neutral-400 text-shadow-lg text-sm italic">
+                      {organizer.pronouns}
+                    </span>
+                  </div>
                 </div>
               </CardTitle>
+              <div className="flex flex-row items-center justify-end">
+                {organizer.twitch && (
+                  <a href={organizer.twitch}>
+                    <TwitchLogo className="px-2" height="30" />
+                  </a>
+                )}
+                {/* FIXME: Wanted to use SVG, but it was very broken and YouTube doesn't provide official SVG */}
+                {organizer.youtube && (
+                  <a href={organizer.youtube}>
+                    <img
+                      alt="YouTube icon"
+                      className="px-2"
+                      height="60"
+                      src="/icons/youtube.png"
+                      width="60"
+                    />
+                  </a>
+                )}
+              </div>
             </CardHeader>
             <CardContent className="font-medium text-lg text-shadow-lg">
               {organizer.bio}
             </CardContent>
-            <CardFooter className="place-content-evenly">
-              {organizer.twitch && (
-                <a className="" href={organizer.twitch}>
-                  <TwitchLogo height="30" />
-                </a>
-              )}
-              {/* FIXME: Wanted to use SVG, but it was very broken and YouTube doesn't provide official SVG */}
-              {organizer.youtube && (
-                <a className="" href={organizer.youtube}>
-                  <img
-                    alt="YouTube icon"
-                    height="50"
-                    src="/icons/youtube.png"
-                    width="50"
-                  />
-                </a>
-              )}
-            </CardFooter>
           </Card>
         )
       })}
