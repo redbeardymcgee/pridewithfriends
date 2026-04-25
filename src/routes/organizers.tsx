@@ -15,21 +15,21 @@ export const Route = createFileRoute("/organizers")({
 
 const organizers = [
   {
-    bio: "hello world",
+    bio: "Creator of too many Spire song parodies. Moderator of too many Spire Twitch channels. Merlathon co-organizer.",
     name: "asukii",
     pronouns: "she/her",
     twitch: "https://twitch.tv/asukii",
     youtube: "https://youtube.com/@asukii314/",
   },
   {
-    bio: "hello world",
+    bio: "Spire 1 and 2 speedrunner, WR holder, and moderator.",
     name: "Mira Newton",
     pronouns: "they/them",
     twitch: "https://twitch.tv/hellofmira",
     youtube: "https://www.youtube.com/@mirahell",
   },
   {
-    bio: "hello world",
+    bio: "Partnered Spire streamer owned by an incredibly cute cat.",
     name: "kaosmark2",
     pronouns: "they/them",
     twitch: "https://twitch.tv/kaosmark2",
@@ -44,14 +44,14 @@ const organizers = [
     youtube: "https://www.youtube.com/@RedbeardyMcGee",
   },
   {
-    bio: "hello world",
+    bio: "",
     name: "Transgentrified",
     pronouns: "they/them",
     twitch: "https://twitch.tv/Transgentrified",
     youtube: "",
   },
   {
-    bio: "hello world",
+    bio: "",
     name: "vmService",
     pronouns: "",
     twitch: "https://twitch.tv/vmService",
@@ -61,7 +61,7 @@ const organizers = [
 
 function OrganizerCards() {
   return (
-    <div className="mt-4 grid grid-flow-col grid-rows-2 gap-2">
+    <div className="mt-4 grid grid-flow-col grid-rows-2 place-content-evenly gap-4">
       {organizers.map((organizer) => {
         return (
           <Card className="w-md bg-slate-700" key={organizer.name}>
