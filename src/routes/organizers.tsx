@@ -56,7 +56,7 @@ const organizers = [
   },
   {
     avatar: "/avatars/vmservice.jpg",
-    bio: "",
+    bio: "Best Japanese Slay the Spire player.",
     name: "vmService",
     pronouns: "",
     twitch: "https://twitch.tv/vmService",
