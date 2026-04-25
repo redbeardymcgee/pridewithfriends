@@ -19,18 +19,21 @@ const organizers = [
     name: "asukii",
     pronouns: "she/her",
     twitch: "https://twitch.tv/asukii",
+    youtube: "https://youtube.com/@asukii314/",
   },
   {
     bio: "hello world",
     name: "Mira Newton",
     pronouns: "they/them",
     twitch: "https://twitch.tv/hellofmira",
+    youtube: "https://www.youtube.com/@mirahell",
   },
   {
     bio: "hello world",
     name: "kaosmark2",
     pronouns: "they/them",
     twitch: "https://twitch.tv/kaosmark2",
+    youtube: "http://www.youtube.com/@kaosmark2",
   },
   {
     bio: "hello world",
@@ -49,18 +52,21 @@ const organizers = [
     name: "Redbeardy McGee",
     pronouns: "he/them",
     twitch: "https://twitch.tv/redbeardymcgee",
+    youtube: "https://www.youtube.com/@RedbeardyMcGee",
   },
   {
     bio: "hello world",
     name: "Transgentrified",
     pronouns: "they/them",
     twitch: "https://twitch.tv/Transgentrified",
+    youtube: "",
   },
   {
     bio: "hello world",
     name: "vmService",
     pronouns: "",
     twitch: "https://twitch.tv/vmService",
+    youtube: "https://www.youtube.com/@vmserv",
   },
 ]
 
@@ -91,10 +97,23 @@ function OrganizerCards() {
             <CardContent className="font-medium text-lg text-shadow-lg">
               {organizer.bio}
             </CardContent>
-            <CardFooter>
-              <a href={organizer.twitch}>
-                <TwitchLogo height="30" />
-              </a>
+            <CardFooter className="place-content-evenly">
+              {organizer.twitch && (
+                <a className="" href={organizer.twitch}>
+                  <TwitchLogo height="30" />
+                </a>
+              )}
+              {/* FIXME: Wanted to use SVG, but it was very broken and YouTube doesn't provide official SVG */}
+              {organizer.youtube && (
+                <a className="" href={organizer.youtube}>
+                  <img
+                    alt="YouTube icon"
+                    height="50"
+                    src="/public/icons/youtube.png"
+                    width="50"
+                  />
+                </a>
+              )}
             </CardFooter>
           </Card>
         )
