@@ -15,6 +15,7 @@ export const Route = createFileRoute("/organizers")({
 
 const organizers = [
   {
+    avatar: "/avatars/asukii.jpg",
     bio: "Creator of too many Spire song parodies. Moderator of too many Spire Twitch channels. Merlathon co-organizer.",
     name: "asukii",
     pronouns: "she/her",
@@ -22,6 +23,7 @@ const organizers = [
     youtube: "https://youtube.com/@asukii314/",
   },
   {
+    avatar: "/avatars/mira_newton.jpg",
     bio: "Spire 1 and 2 speedrunner, WR holder, and moderator.",
     name: "Mira Newton",
     pronouns: "they/them",
@@ -29,6 +31,7 @@ const organizers = [
     youtube: "https://www.youtube.com/@mirahell",
   },
   {
+    avatar: "/avatars/kaosmark2.jpg",
     bio: "Partnered Spire streamer owned by an incredibly cute cat.",
     name: "kaosmark2",
     pronouns: "they/them",
@@ -44,6 +47,7 @@ const organizers = [
     youtube: "https://www.youtube.com/@RedbeardyMcGee",
   },
   {
+    avatar: "/avatars/transgentrified.png",
     bio: "",
     name: "Transgentrified",
     pronouns: "they/them",
@@ -51,6 +55,7 @@ const organizers = [
     youtube: "",
   },
   {
+    avatar: "/avatars/vmservice.jpg",
     bio: "",
     name: "vmService",
     pronouns: "",
@@ -66,12 +71,14 @@ function OrganizerCards() {
         return (
           <Card className="w-md bg-slate-700" key={organizer.name}>
             <CardHeader>
-              <Avatar>
-                <AvatarImage src={undefined} />
-                <AvatarFallback>
-                  {organizer.name.slice(0, 2).toLowerCase()}
-                </AvatarFallback>
-              </Avatar>
+              {organizer.avatar && (
+                <Avatar>
+                  <AvatarImage src={organizer.avatar} />
+                  <AvatarFallback>
+                    {organizer.name.slice(0, 2).toLowerCase()}
+                  </AvatarFallback>
+                </Avatar>
+              )}
               <CardTitle>
                 <span className="font-semibold text-4xl text-neutral-400 text-shadow-lg">
                   {organizer.name}
