@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router"
+import { createFileRoute, Link } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/")({ component: App })
 
@@ -41,7 +41,7 @@ function App() {
             "Meet the amazing gamers participating in Pride With Friends.",
           ],
           ["Schedule", "Find your favorite events during Pride With Friends."],
-          ["Find a lobby", "Discover upcoming coop lobbies that you can join!"],
+          // ["Lobbies", "Discover upcoming coop lobbies that you can join!"],
           ["Support", "Donate to <charity>!"],
         ].map(([title, desc], index) => (
           <article
@@ -50,7 +50,9 @@ function App() {
             style={{ animationDelay: `${index * 90 + 80}ms` }}
           >
             <h2 className="mb-2 font-semibold text-(--sea-ink) text-base">
-              {title}
+              <Link className="" to={title.toLowerCase()}>
+                {title}
+              </Link>
             </h2>
             <p className="m-0 text-(--sea-ink-soft) text-sm">{desc}</p>
           </article>
