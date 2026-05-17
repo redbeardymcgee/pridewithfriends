@@ -9,12 +9,18 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as StreamersRouteImport } from './routes/streamers'
 import { Route as OrganizersRouteImport } from './routes/organizers'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as DocsRouteRouteImport } from './routes/docs/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DocsSetupRouteImport } from './routes/docs/setup'
 
+const StreamersRoute = StreamersRouteImport.update({
+  id: '/streamers',
+  path: '/streamers',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OrganizersRoute = OrganizersRouteImport.update({
   id: '/organizers',
   path: '/organizers',
@@ -46,6 +52,7 @@ export interface FileRoutesByFullPath {
   '/docs': typeof DocsRouteRouteWithChildren
   '/about': typeof AboutRoute
   '/organizers': typeof OrganizersRoute
+  '/streamers': typeof StreamersRoute
   '/docs/setup': typeof DocsSetupRoute
 }
 export interface FileRoutesByTo {
@@ -53,6 +60,7 @@ export interface FileRoutesByTo {
   '/docs': typeof DocsRouteRouteWithChildren
   '/about': typeof AboutRoute
   '/organizers': typeof OrganizersRoute
+  '/streamers': typeof StreamersRoute
   '/docs/setup': typeof DocsSetupRoute
 }
 export interface FileRoutesById {
@@ -61,14 +69,28 @@ export interface FileRoutesById {
   '/docs': typeof DocsRouteRouteWithChildren
   '/about': typeof AboutRoute
   '/organizers': typeof OrganizersRoute
+  '/streamers': typeof StreamersRoute
   '/docs/setup': typeof DocsSetupRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/docs' | '/about' | '/organizers' | '/docs/setup'
+  fullPaths:
+    | '/'
+    | '/docs'
+    | '/about'
+    | '/organizers'
+    | '/streamers'
+    | '/docs/setup'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/docs' | '/about' | '/organizers' | '/docs/setup'
-  id: '__root__' | '/' | '/docs' | '/about' | '/organizers' | '/docs/setup'
+  to: '/' | '/docs' | '/about' | '/organizers' | '/streamers' | '/docs/setup'
+  id:
+    | '__root__'
+    | '/'
+    | '/docs'
+    | '/about'
+    | '/organizers'
+    | '/streamers'
+    | '/docs/setup'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -76,10 +98,18 @@ export interface RootRouteChildren {
   DocsRouteRoute: typeof DocsRouteRouteWithChildren
   AboutRoute: typeof AboutRoute
   OrganizersRoute: typeof OrganizersRoute
+  StreamersRoute: typeof StreamersRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/streamers': {
+      id: '/streamers'
+      path: '/streamers'
+      fullPath: '/streamers'
+      preLoaderRoute: typeof StreamersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/organizers': {
       id: '/organizers'
       path: '/organizers'
@@ -135,6 +165,7 @@ const rootRouteChildren: RootRouteChildren = {
   DocsRouteRoute: DocsRouteRouteWithChildren,
   AboutRoute: AboutRoute,
   OrganizersRoute: OrganizersRoute,
+  StreamersRoute: StreamersRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
