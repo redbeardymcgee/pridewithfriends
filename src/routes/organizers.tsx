@@ -75,16 +75,14 @@ function OrganizerCards() {
               {/* <CardHeader className="flex flex-row"> */}
               <CardTitle>
                 <div className="flex flex-row pb-2">
-                  <div className="mr-2">
-                    {organizer.avatar && (
-                      <Avatar className="mb-2" size="lg">
-                        <AvatarImage src={organizer.avatar} />
-                        <AvatarFallback>
-                          {organizer.name.slice(0, 2).toLowerCase()}
-                        </AvatarFallback>
-                      </Avatar>
-                    )}
-                  </div>
+                  {organizer.avatar && (
+                    <Avatar className="mr-4 mb-2" size="lg">
+                      <AvatarImage src={organizer.avatar} />
+                      <AvatarFallback>
+                        {organizer.name.slice(0, 2).toLowerCase()}
+                      </AvatarFallback>
+                    </Avatar>
+                  )}
                   <div className="flex flex-col">
                     <span className="font-semibold text-2xl text-neutral-400 text-shadow-lg">
                       {organizer.name}
