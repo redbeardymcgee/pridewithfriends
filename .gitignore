@@ -13,3 +13,5 @@ __unconfig*
 todos.json
 .direnv
 VISION.md
+.env.development
+.env.production
