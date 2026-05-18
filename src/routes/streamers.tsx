@@ -13,114 +13,32 @@ import {
 import TwitchLogo from "@/assets/icons/glitch_flat_purple.svg?react"
 
 const streamers = [
-  {
-    discord: "",
-    twitch: "0_tripwire_0",
-  },
-  {
-    discord: "",
-    twitch: "baalorlord",
-  },
-  {
-    discord: "",
-    twitch: "blazikus",
-  },
-  {
-    discord: "",
-    twitch: "bunhara",
-  },
-  {
-    discord: "",
-    twitch: "carlsagan42",
-  },
-  {
-    discord: "",
-    twitch: "commentbagel",
-  },
-  {
-    discord: "",
-    twitch: "croven831",
-  },
-  {
-    discord: "",
-    twitch: "disruptr88",
-  },
-  {
-    discord: "",
-    twitch: "dr0gulus",
-  },
-  {
-    discord: "",
-    twitch: "fletch74",
-  },
-  {
-    discord: "",
-    twitch: "its_goddy",
-  },
-  {
-    discord: "",
-    twitch: "japaneseexport",
-  },
-  {
-    discord: "",
-    twitch: "jmac_sts",
-  },
-  {
-    discord: "",
-    twitch: "merl61",
-  },
-  {
-    discord: "",
-    twitch: "midmillenial",
-  },
-  {
-    discord: "",
-    twitch: "multibradx",
-  },
-  {
-    discord: "",
-    twitch: "navegreed",
-  },
-  {
-    discord: "",
-    twitch: "onepunman_",
-  },
-  {
-    discord: "",
-    twitch: "paparatto18",
-  },
-  {
-    discord: "",
-    twitch: "rebelnae",
-  },
-  {
-    discord: "",
-    twitch: "solowingsc2",
-  },
-  {
-    discord: "",
-    twitch: "sorcerertwyx",
-  },
-  {
-    discord: "",
-    twitch: "strongholdcentral",
-  },
-  {
-    discord: "",
-    twitch: "tonytwitch",
-  },
-  {
-    discord: "",
-    twitch: "vmservice",
-  },
-  {
-    discord: "",
-    twitch: "xecnar",
-  },
-  {
-    discord: "",
-    twitch: "zzzhypnos",
-  },
+  "0_tripwire_0",
+  "baalorlord",
+  "blazikus",
+  "bunhara",
+  "carlsagan42",
+  "commentbagel",
+  "croven831",
+  "disruptr88",
+  "dr0gulus",
+  "fletch74",
+  "japaneseexport",
+  "jmac_sts",
+  "merl61",
+  "midmillenial",
+  "multibradx",
+  "navegreed",
+  "onepunman_",
+  "paparatto18",
+  "rebelnae",
+  "solowingsc2",
+  "sorcerertwyx",
+  "strongholdcentral",
+  "tonytwitch",
+  "vmservice",
+  "xecnar",
+  "zzzhypnos",
 ]
 
 const getStreamers = createServerFn().handler(async () => {
@@ -134,9 +52,7 @@ const getStreamers = createServerFn().handler(async () => {
   }
   const authProvider = new AppTokenAuthProvider(clientId, clientSecret)
   const apiClient = new ApiClient({ authProvider })
-  const users = await apiClient.users.getUsersByNames(
-    streamers.map((streamer) => streamer.twitch),
-  )
+  const users = await apiClient.users.getUsersByNames(streamers)
 
   if (!users) {
     throw new Error("No users found.")
