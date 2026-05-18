@@ -76,9 +76,7 @@ const getStreamers = createServerFn().handler(async () => {
 export const Route = createFileRoute("/streamers")({
   component: StreamerCards,
   loader: async () => {
-    const streamers = await getStreamers()
-
-    return streamers
+    return await getStreamers()
   },
 })
 
