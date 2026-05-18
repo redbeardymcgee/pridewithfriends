@@ -108,7 +108,7 @@ function StreamerCards() {
                   <Avatar className="mr-4" size="lg">
                     <AvatarImage src={streamer.profilePictureUrl} />
                     <AvatarFallback>
-                      {streamer.name.slice(0, 2).toLowerCase()}
+                      {streamer.name.slice(0, 2).toLocaleLowerCase()}
                     </AvatarFallback>
                   </Avatar>
                   <div className="flex flex-col">
