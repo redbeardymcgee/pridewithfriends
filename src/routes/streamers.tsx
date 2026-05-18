@@ -50,6 +50,7 @@ const getStreamers = createServerFn().handler(async () => {
       "Missing Twitch API credentials. Check the .env, .env.development, .env.local and .env.production files.",
     )
   }
+
   const authProvider = new AppTokenAuthProvider(clientId, clientSecret)
   const apiClient = new ApiClient({ authProvider })
   const users = await apiClient.users.getUsersByNames(streamers)
@@ -115,9 +116,6 @@ function StreamerCards() {
                     <span className="font-semibold text-2xl text-neutral-400 text-shadow-lg">
                       {streamer.displayName}
                     </span>
-                    {/* <span className="font-light text-neutral-400 text-shadow-lg text-sm italic"> */}
-                    {/*   {streamer.pronouns} */}
-                    {/* </span> */}
                   </div>
                 </div>
               </CardTitle>
@@ -127,18 +125,6 @@ function StreamerCards() {
               >
                 <TwitchLogo className="px-2" height="30" />
               </a>
-              {/* FIXME: Wanted to use SVG, but it was very broken and YouTube doesn't provide official SVG */}
-              {/* {organizer.youtube && ( */}
-              {/*   <a href={organizer.youtube}> */}
-              {/*     <img */}
-              {/*       alt="YouTube icon" */}
-              {/*       className="px-2" */}
-              {/*       height="60" */}
-              {/*       src="/icons/youtube.png" */}
-              {/*       width="60" */}
-              {/*     /> */}
-              {/*   </a> */}
-              {/* )} */}
             </CardHeader>
             <CardContent>{streamer.description}</CardContent>
           </Card>
