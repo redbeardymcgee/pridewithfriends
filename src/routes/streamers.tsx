@@ -1,7 +1,7 @@
-import { createFileRoute, Link } from "@tanstack/react-router"
+import { createFileRoute } from "@tanstack/react-router"
 import { createServerFn } from "@tanstack/react-start"
-import { ApiClient, type HelixUser } from "@twurple/api"
-import { AppTokenAuthProvider, RefreshingAuthProvider } from "@twurple/auth"
+import { ApiClient } from "@twurple/api"
+import { AppTokenAuthProvider } from "@twurple/auth"
 import { Avatar, AvatarFallback, AvatarImage } from "#/components/ui/avatar"
 import {
   Card,
