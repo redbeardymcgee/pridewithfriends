@@ -99,37 +99,45 @@ function StreamerCards() {
   })
 
   return (
-    <div className="mt-4 grid grid-cols-3 justify-items-center gap-y-4">
-      {sortedCards.map((streamer) => {
-        return (
-          <Card className="w-sm bg-slate-700" key={streamer.name}>
-            <CardHeader className="grid grid-flow-col grid-rows-1">
-              <CardTitle>
-                <div className="flex flex-row pb-2">
-                  <Avatar className="mr-4" size="lg">
-                    <AvatarImage src={streamer.profilePictureUrl} />
-                    <AvatarFallback>
-                      {streamer.name.slice(0, 2).toLocaleLowerCase()}
-                    </AvatarFallback>
-                  </Avatar>
-                  <div className="flex flex-col">
-                    <span className="font-semibold text-2xl text-neutral-400 text-shadow-lg">
-                      {streamer.displayName}
-                    </span>
+    <>
+      <div className="bg-slate-900 text-center">
+        <h1 className="my-2 text-4xl">Streamers</h1>
+        <p className="text-slate-400 text-xl">
+          Meet the amazing gamers supporting Pride With Friends!
+        </p>
+      </div>
+      <div className="mt-4 grid grid-cols-3 justify-items-center gap-y-4">
+        {sortedCards.map((streamer) => {
+          return (
+            <Card className="w-sm bg-slate-700" key={streamer.name}>
+              <CardHeader className="grid grid-flow-col grid-rows-1">
+                <CardTitle>
+                  <div className="flex flex-row pb-2">
+                    <Avatar className="mr-4" size="lg">
+                      <AvatarImage src={streamer.profilePictureUrl} />
+                      <AvatarFallback>
+                        {streamer.name.slice(0, 2).toLocaleLowerCase()}
+                      </AvatarFallback>
+                    </Avatar>
+                    <div className="flex flex-col">
+                      <span className="font-semibold text-2xl text-neutral-400 text-shadow-lg">
+                        {streamer.displayName}
+                      </span>
+                    </div>
                   </div>
-                </div>
-              </CardTitle>
-              <a
-                className="place-self-end self-center"
-                href={`https://twitch.tv/${streamer.name}`}
-              >
-                <TwitchLogo className="px-2" height="30" />
-              </a>
-            </CardHeader>
-            <CardContent>{streamer.description}</CardContent>
-          </Card>
-        )
-      })}
-    </div>
+                </CardTitle>
+                <a
+                  className="place-self-end self-center"
+                  href={`https://twitch.tv/${streamer.name}`}
+                >
+                  <TwitchLogo className="px-2" height="30" />
+                </a>
+              </CardHeader>
+              <CardContent>{streamer.description}</CardContent>
+            </Card>
+          )
+        })}
+      </div>
+    </>
   )
 }
