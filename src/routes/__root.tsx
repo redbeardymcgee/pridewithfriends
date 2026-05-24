@@ -4,6 +4,7 @@ import {
   createRootRouteWithContext,
   HeadContent,
   Scripts,
+  useLocation,
 } from "@tanstack/react-router"
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools"
 import { TooltipProvider } from "#/components/ui/tooltip"
@@ -43,6 +44,7 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
 })
 
 function RootDocument({ children }: { children: React.ReactNode }) {
+  const { pathname } = useLocation()
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -53,7 +55,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <body className="wrap:anywhere font-sans antialiased selection:bg-[rgba(79,184,178,0.24)]">
         <Header />
         <TooltipProvider>{children}</TooltipProvider>
-        <Footer />
+        {!pathname.startsWith("/docs") && <Footer />}
         <TanStackDevtools
           config={{
             position: "bottom-right",
