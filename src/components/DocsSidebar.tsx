@@ -2,108 +2,83 @@ import { Link } from "@tanstack/react-router"
 import {
   Sidebar,
   SidebarContent,
-  SidebarFooter,
   SidebarGroup,
-  SidebarGroupContent,
   SidebarGroupLabel,
   SidebarHeader,
   SidebarMenuButton,
   SidebarMenuItem,
 } from "#/components/ui/sidebar"
 
+const groups = [
+  {
+    items: [
+      {
+        hash: "campaign-setup",
+        label: "Campaign setup",
+        to: ".",
+      },
+    ],
+    label: "Campaign",
+  },
+  {
+    items: [
+      { hash: "overlay-setup", label: "Donation tracker", to: "." },
+      {
+        hash: "campaign-tracker",
+        label: "Campaign tracker",
+        to: ".",
+      },
+    ],
+    label: "Overlay",
+  },
+  {
+    items: [
+      { hash: "bot-setup", label: "Chat commands", to: "." },
+      { hash: "streamelements", label: "StreamElements", to: "." },
+      { hash: "nightbot", label: "Nightbot", to: "." },
+      { hash: "streamlabs", label: "Streamlabs", to: "." },
+    ],
+    label: "Bot",
+  },
+  {
+    items: [
+      { hash: "donation-link-setup", label: "Links", to: "." },
+      { hash: "donation-panel-setup", label: "Panels", to: "." },
+    ],
+    label: "Donations",
+  },
+]
+
 export function DocsSidebar() {
   return (
-    // FIXME:The height of this should be dynamically calculated. Currently the
-    // header is in front of the sidebar and the footer is behind.
-    // This className overrides the `sidebar-container` data-slot.
-    <Sidebar className="fixed inset-y-16 h-fit" collapsible="offcanvas">
-      {/* <SidebarHeader className="mt-16"> */}
-      <SidebarHeader>
-        <p>hello world</p>
+    <Sidebar className="fixed top-16 h-fit">
+      <SidebarHeader className="items-center">
+        <p>Navigation</p>
       </SidebarHeader>
       <SidebarContent className="pl-3">
-        <SidebarGroup>
-          <SidebarGroupLabel>Campaign</SidebarGroupLabel>
-          <SidebarMenuItem>
-            <SidebarMenuButton asChild>
-              {/* FIXME: All these links are styled like links instead of menu items */}
-              <Link hash="campaign-setup" to="/docs/setup">
-                Create your campaign
-              </Link>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-        </SidebarGroup>
-        <SidebarGroup>
-          <SidebarGroupLabel>Overlay</SidebarGroupLabel>
-          <SidebarMenuItem>
-            <SidebarMenuButton asChild>
-              <Link hash="overlay-setup" to="/docs/setup">
-                Donation tracker
-              </Link>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-          <SidebarMenuItem>
-            <SidebarMenuButton asChild>
-              <Link hash="campaign-tracker" to="/docs/setup">
-                Campaign tracker
-              </Link>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-        </SidebarGroup>
-        <SidebarGroup>
-          <SidebarGroupLabel>Bot</SidebarGroupLabel>
-          <SidebarMenuItem>
-            <SidebarMenuButton asChild>
-              <Link hash="bot-setup" to="/docs/setup">
-                Chat commands
-              </Link>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-          <SidebarMenuItem>
-            <SidebarMenuButton asChild>
-              <Link hash="streamelements" to="/docs/setup">
-                StreamElements
-              </Link>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-          <SidebarMenuItem>
-            <SidebarMenuButton asChild>
-              <Link hash="nightbot" to="/docs/setup">
-                Nightbot
-              </Link>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-          <SidebarMenuItem>
-            <SidebarMenuButton asChild>
-              <Link hash="Streamlabs" to="/docs/setup">
-                Streamlabs
-              </Link>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-        </SidebarGroup>
-        <SidebarGroup>
-          <SidebarGroupLabel>Donations</SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenuItem>
-              <SidebarMenuButton asChild>
-                <Link hash="donation-link-setup" to="/docs/setup">
-                  Links
-                </Link>
-              </SidebarMenuButton>
-            </SidebarMenuItem>
-            <SidebarMenuItem>
-              <SidebarMenuButton asChild>
-                <Link hash="donation-panel-setup" to="/docs/setup">
-                  Panels
-                </Link>
-              </SidebarMenuButton>
-            </SidebarMenuItem>
-          </SidebarGroupContent>
-        </SidebarGroup>
+        {groups.map((group) => (
+          <SidebarGroup key={group.label}>
+            <SidebarGroupLabel>{group.label}</SidebarGroupLabel>
+            {group.items.map((item) => (
+              <SidebarMenuItem className="list-none" key={item.hash}>
+                <SidebarMenuButton asChild>
+                  <Link
+                    activeOptions={{ includeHash: true }}
+                    activeProps={{
+                      className: "font-bold",
+                    }}
+                    className="text-current!"
+                    hash={item.hash}
+                    to={item.to}
+                  >
+                    {item.label}
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            ))}
+          </SidebarGroup>
+        ))}
       </SidebarContent>
-      <SidebarFooter>
-        <p>goodbye world</p>
-      </SidebarFooter>
     </Sidebar>
   )
 }
