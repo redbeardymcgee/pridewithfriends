@@ -3,13 +3,7 @@ import { createServerFn } from "@tanstack/react-start"
 import { ApiClient } from "@twurple/api"
 import { AppTokenAuthProvider } from "@twurple/auth"
 import { Avatar, AvatarFallback, AvatarImage } from "#/components/ui/avatar"
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "#/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "#/components/ui/card"
 import TwitchLogo from "@/assets/icons/glitch_flat_purple.svg?react"
 
 const streamers = [
