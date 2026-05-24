@@ -1,16 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router"
+import { ExampleText, TutorialText, WarningText } from "#/components/typography"
 
 export const Route = createFileRoute("/docs/setup")({
   component: RouteComponent,
 })
-
-function TutorialText({ text }: { text: string }) {
-  return <strong className="text-red-300">{text}</strong>
-}
-
-function ExampleText({ text }: { text: string }) {
-  return <em className="text-orange-300">{text}</em>
-}
 
 function CampaignSetup() {
   return (
@@ -35,22 +28,22 @@ function CampaignSetup() {
           >
             here
           </a>{" "}
-          (<strong className="text-red-400">WARNING:</strong>
+          (<WarningText>WARNING:</WarningText>
           <em> This is not updated yet</em>)
         </li>
         <li>
-          Click <TutorialText text="Support this campaign" />
+          Click <TutorialText>Support this campaign</TutorialText>
         </li>
         <li>
-          Fill in the <TutorialText text="Campaign Name" /> (e.g{" "}
-          <ExampleText text="Pride With Friends 2026 [YOURNAME]" />)
+          Fill in the <TutorialText>Campaign Name</TutorialText> (e.g{" "}
+          <ExampleText>Pride With Friends 2026 [YOURNAME]</ExampleText>)
         </li>
         <li>
           Add a description (e.g.{" "}
-          <ExampleText
-            text="[YOURNAME] climbs spires and slays hearts with friends to support
-            the Trevor Project!"
-          />
+          <ExampleText>
+            [YOURNAME] climbs spires and slays hearts with friends to support
+            the Trevor Project!
+          </ExampleText>
           )
         </li>
         <li>Link your Twitch account name or skip</li>
@@ -66,7 +59,7 @@ function CampaignSetup() {
         </li>
         <li>
           {" "}
-          Click <TutorialText text="Create Campaign" />
+          Click <TutorialText>Create Campaign</TutorialText>
         </li>
       </ol>
       <br />
@@ -98,17 +91,18 @@ function OverlaySetup() {
       <ol className="list-decimal pl-10">
         <li>
           From the published campaign dashboard, click{" "}
-          <TutorialText text="Overlays" /> on the top bar
+          <TutorialText>Overlays</TutorialText> on the top bar
         </li>
         <li>Create new overlay</li>
         <li>
-          Choose <TutorialText text="Blank Slate" /> to start from an empty
+          Choose <TutorialText>Blank Slate</TutorialText> to start from an empty
           overlay
         </li>
         <li>
-          Choose <TutorialText text="The Default" /> to start with a basic
-          overlay that already includes the <TutorialText text="Alert Box" />{" "}
-          and <TutorialText text="Event List" /> and a QR code for mobile users
+          Choose <TutorialText>The Default</TutorialText> to start with a basic
+          overlay that already includes the{" "}
+          <TutorialText>Alert Box</TutorialText> and{" "}
+          <TutorialText>Event List</TutorialText> and a QR code for mobile users
         </li>
         <li>
           Use the editor to add and remove widgets, edit colors, add sounds,
@@ -117,7 +111,8 @@ function OverlaySetup() {
         <li>Save the changes with the button above the overlay preview</li>
         <li>Copy the overlay URL</li>
         <li>
-          Add the overlay as a <TutorialText text="Browser Source" /> in OBS
+          Add the overlay as a <TutorialText>Browser Source</TutorialText> in
+          OBS
         </li>
       </ol>
       <br />
@@ -130,12 +125,12 @@ function OverlaySetup() {
       <ul className="list-disc pl-10">
         <li>
           Use the steps above, starting with the{" "}
-          <TutorialText text="Blank Slate" />.
+          <TutorialText>Blank Slate</TutorialText>.
         </li>
         <li>
           Add <strong>one</strong> overlay element, such as the{" "}
-          <TutorialText text="Alert Box" /> or{" "}
-          <TutorialText text="Event List" />
+          <TutorialText>Alert Box</TutorialText> or{" "}
+          <TutorialText>Event List</TutorialText>
         </li>
         <li>Edit it to your needs</li>
         <li>
@@ -161,8 +156,8 @@ function BotSetup() {
         </Link>
       </h2>
       <p>
-        A <TutorialText text="Timer" /> message to promote the event during the
-        week:
+        A <TutorialText>Timer</TutorialText> message to promote the event during
+        the week:
       </p>
       <br />
       <p>
@@ -182,14 +177,14 @@ function BotSetup() {
       <ol className="list-decimal pl-10">
         <li>Login to your StreamElements Dashboard</li>
         <li>
-          On the left sidebar, click <TutorialText text="BOT" /> to expand the
-          section
+          On the left sidebar, click <TutorialText>BOT</TutorialText> to expand
+          the section
         </li>
         <li>
-          Click <TutorialText text="Timers" />{" "}
+          Click <TutorialText>Timers</TutorialText>{" "}
         </li>
         <li>
-          Click <TutorialText text="ADD NEW TIMER" />
+          Click <TutorialText>ADD NEW TIMER</TutorialText>
         </li>
         <li>
           Name the command (<code>pwf-timer</code>, for example)
@@ -211,10 +206,10 @@ function BotSetup() {
       <ol className="list-decimal pl-10">
         <li>Login to your Nightbot Dashboard</li>
         <li>
-          On the left sidebar, click <TutorialText text="Timers" />
+          On the left sidebar, click <TutorialText>Timers</TutorialText>
         </li>
         <li>
-          Click <TutorialText text="+ Add" />
+          Click <TutorialText>+ Add</TutorialText>
         </li>
         <li>
           Name the command (<code>pwf-timer</code>, for example)
@@ -235,10 +230,10 @@ function BotSetup() {
       <ol className="list-decimal pl-10">
         <li>Login to your Streamlabs Dashboard</li>
         <li>
-          On the left sidebar, click <TutorialText text="Cloudbot" />
+          On the left sidebar, click <TutorialText>Cloudbot</TutorialText>
         </li>
         <li>
-          Click <TutorialText text="Add Timer" />
+          Click <TutorialText>Add Timer</TutorialText>
         </li>
         <li>
           Name the command (<code>pwf-timer</code>, for example)
@@ -249,14 +244,14 @@ function BotSetup() {
           without spamming the chatbox (usually about 15 minutes is fine)
         </li>
         <li>
-          Turn the <TutorialText text="Line Minimum" /> down to zero
+          Turn the <TutorialText>Line Minimum</TutorialText> down to zero
         </li>
       </ol>
       <br />
       <p>
         For commands that chat can trigger on demand, follow the same
-        instructions as above but click on <TutorialText text="Commands" />{" "}
-        instead of <TutorialText text="Timers" /> and proceed as usual.
+        instructions as above but click on <TutorialText>Commands</TutorialText>{" "}
+        instead of <TutorialText>Timers</TutorialText> and proceed as usual.
       </p>
     </div>
   )
@@ -284,19 +279,19 @@ function LinkSetup() {
         </li>
         <li>
           Click the campaign you created earlier{" "}
-          <ExampleText text="Pride With Friends 2025 [YOURNAME]" />
+          <ExampleText>Pride With Friends 2025 [YOURNAME]</ExampleText>
         </li>
         <li>
           Use the share or copy buttons to get a valid link
           <ul className="list-inside list-disc pl-10">
             <li>
-              <TutorialText text="Share" />{" "}
+              <TutorialText>Share</TutorialText>{" "}
             </li>
             <li>
-              <TutorialText text="Copy Donate URL" />
+              <TutorialText>Copy Donate URL</TutorialText>
             </li>
             <li>
-              <TutorialText text="Copy Campaign URL" />.
+              <TutorialText>Copy Campaign URL</TutorialText>.
             </li>
           </ul>
         </li>
@@ -304,8 +299,8 @@ function LinkSetup() {
         <li>
           Using your Twitch channel chatbot of choice, add or edit your{" "}
           <code>!donate</code>/<code>!pwf</code>/<code>!pride</code> command to
-          include the donate URL copied from the <TutorialText text="Share" />{" "}
-          panel.
+          include the donate URL copied from the{" "}
+          <TutorialText>Share</TutorialText> panel.
         </li>
       </ol>
     </div>
@@ -326,39 +321,40 @@ function PanelSetup() {
           open the options menu.
         </li>
         <li>
-          Click <TutorialText text="Channel" /> to go to your Twitch channel.
+          Click <TutorialText>Channel</TutorialText> to go to your Twitch
+          channel.
         </li>
         <li>
-          Click <TutorialText text="About" /> under the video player
+          Click <TutorialText>About</TutorialText> under the video player
         </li>
         <li>
-          Click <TutorialText text="Edit Panel" /> under{" "}
-          <TutorialText text="About Me" />
+          Click <TutorialText>Edit Panel</TutorialText> under{" "}
+          <TutorialText>About Me</TutorialText>
         </li>
         <li>Click the large gray plus symbol</li>
         <li>Click add a text or image panel</li>
         <li>
-          Click <TutorialText text="Add Image" />
+          Click <TutorialText>Add Image</TutorialText>
         </li>
         <li>TODO: PUT IMAGE FOR DOWNLOAD HERE</li>
         <li>
           Fill out the description with a message similar to this, edited to
           your liking:
           <p>
-            <ExampleText
-              text="Donate to the Trevor Project directly by clicking this panel!
-                  Donations are non-refundable, but deeply appreciated!"
-            />
+            <ExampleText>
+              Donate to the Trevor Project directly by clicking this panel!
+              Donations are non-refundable, but deeply appreciated!
+            </ExampleText>
           </p>
         </li>
         <li>
-          Fill in the <TutorialText text="Image Links to" /> box with your{" "}
+          Fill in the <TutorialText>Image Links to</TutorialText> box with your{" "}
           <Link hash="donation-link-setup" to=".">
             donation URL
           </Link>
         </li>
         <li>
-          Click <TutorialText text="Submit" /> and you’re done!
+          Click <TutorialText>Submit</TutorialText> and you're done!
         </li>
       </ol>
     </div>
@@ -377,9 +373,9 @@ function CampaignTracker() {
       <p>
         For those of you who <strong>are</strong> streaming, but do not want to
         implement your own individual campaign and overlays, you may use this
-        overlay as a <TutorialText text="Browser Source" /> in OBS! Just paste
-        this into the <TutorialText text="Browser Source" /> and set it to{" "}
-        <code>1920x1080</code> resolution
+        overlay as a <TutorialText>Browser Source</TutorialText> in OBS! Just
+        paste this into the <TutorialText>Browser Source</TutorialText> and set
+        it to <code>1920x1080</code> resolution
       </p>
       <br />
       <a
@@ -389,7 +385,7 @@ function CampaignTracker() {
       >
         Overlay
       </a>{" "}
-      <span className="text-red-500">WARNING:</span> Old link!
+      <WarningText tag="span">WARNING:</WarningText> Old link!
       <br />
       <br />
       <p>
