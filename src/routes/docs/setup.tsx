@@ -314,9 +314,11 @@ function LinkSetup() {
 
 function PanelSetup() {
   return (
-    <div>
-      <h2 className="text-cyan-300 text-xl" id="donation-panel">
-        Donation Panel
+    <div className="m-5">
+      <h2 className="text-cyan-300 text-xl" id="donation-panel-setup">
+        <Link hash="donation-panel-setup" to=".">
+          Donation Panel
+        </Link>
       </h2>
       <ol className="list-decimal pl-10">
         <li>
