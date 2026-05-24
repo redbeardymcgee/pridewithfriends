@@ -51,7 +51,7 @@ const groups = [
 
 export function DocsSidebar() {
   return (
-    <Sidebar className="fixed top-16 h-fit">
+    <Sidebar className="fixed top-16 h-svh">
       <SidebarHeader className="items-center">
         <p>Navigation</p>
       </SidebarHeader>
