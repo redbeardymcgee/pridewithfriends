@@ -1,14 +1,14 @@
-import { Link } from "@tanstack/react-router"
+import { createFileRoute } from "@tanstack/react-router"
 import { ExampleText, TutorialText, WarningText } from "#/components/typography"
 
-export function CampaignSetup() {
+export const Route = createFileRoute("/docs/campaign-setup")({
+  component: RouteComponent,
+})
+
+function RouteComponent() {
   return (
     <div className="m-5">
-      <h2 className="text-cyan-300 text-xl" id="campaign-setup">
-        <Link hash="campaign-setup" to=".">
-          Campaign Setup
-        </Link>
-      </h2>
+      <h2 className="text-cyan-300 text-xl">Campaign Setup</h2>
       <p>
         If you are a streamer and want to have your own individual donation
         tracker, overlay, incentives and milestones, follow these instructions.

@@ -1,13 +1,15 @@
-import { Link } from "@tanstack/react-router"
+import { createFileRoute, Link } from "@tanstack/react-router"
 import { TutorialText, WarningText } from "#/components/typography"
 
-export function CampaignTracker() {
+export const Route = createFileRoute("/docs/campaign-tracker")({
+  component: RouteComponent,
+})
+
+function RouteComponent() {
   return (
     <div className="m-5">
-      <h2 className="text-cyan-300 text-xl" id="campaign-tracker">
-        <Link hash="campaign-tracker" to=".">
-          Campaign Tracker
-        </Link>
+      <h2 className="text-cyan-300 text-xl">
+        <Link to="/docs/campaign-tracker">Campaign Tracker</Link>
       </h2>
       {/* TODO: Provide more direct instructions */}
       <p>
@@ -25,7 +27,7 @@ export function CampaignTracker() {
       >
         Overlay
       </a>{" "}
-      <WarningText tag="span">WARNING:</WarningText> Old link!
+      <WarningText>WARNING:</WarningText> Old link!
       <br />
       <br />
       <p>

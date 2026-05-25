@@ -1,13 +1,15 @@
-import { Link } from "@tanstack/react-router"
+import { createFileRoute, Link } from "@tanstack/react-router"
 import { ExampleText, TutorialText } from "#/components/typography"
 
-export function PanelSetup() {
+export const Route = createFileRoute("/docs/panel-setup")({
+  component: RouteComponent,
+})
+
+function RouteComponent() {
   return (
     <div className="m-5">
-      <h2 className="text-cyan-300 text-xl" id="donation-panel-setup">
-        <Link hash="donation-panel-setup" to=".">
-          Donation Panel
-        </Link>
+      <h2 className="text-cyan-300 text-xl">
+        <Link to="/docs/panel-setup">Donation Panel</Link>
       </h2>
       <ol className="list-decimal pl-10">
         <li>
@@ -43,9 +45,7 @@ export function PanelSetup() {
         </li>
         <li>
           Fill in the <TutorialText>Image Links to</TutorialText> box with your{" "}
-          <Link hash="donation-link-setup" to=".">
-            donation URL
-          </Link>
+          <Link to="/docs/link-setup">donation URL</Link>
         </li>
         <li>
           Click <TutorialText>Submit</TutorialText> and you're done!

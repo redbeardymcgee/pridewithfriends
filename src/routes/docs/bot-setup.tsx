@@ -1,13 +1,15 @@
-import { Link } from "@tanstack/react-router"
+import { createFileRoute, Link } from "@tanstack/react-router"
 import { TutorialText } from "#/components/typography"
 
-export function BotSetup() {
+export const Route = createFileRoute("/docs/bot-setup")({
+  component: RouteComponent,
+})
+
+function RouteComponent() {
   return (
     <div className="m-5">
-      <h2 className="text-cyan-500 text-xl" id="bot-setup">
-        <Link hash="bot-setup" to=".">
-          Bot Setup
-        </Link>
+      <h2 className="text-cyan-500 text-xl">
+        <Link to="/docs/bot-setup">Chat commands</Link>
       </h2>
       <p>
         A <TutorialText>Timer</TutorialText> message to promote the event during
@@ -19,12 +21,8 @@ export function BotSetup() {
         community fundraiser supporting the Trevor Project!
       </p>
       <br />
-      <p>
-        Do you use a different bot? Let us know and we will write instructions!
-      </p>
-      <br />
-      <h3 className="text-cyan-200 text-lg" id="streamelements">
-        <Link hash="streamelements" to=".">
+      <h3 className="text-cyan-200 text-lg">
+        <Link hash="streamelements" to="/docs/bot-setup">
           For <strong>StreamElements</strong>:
         </Link>
       </h3>
@@ -52,8 +50,8 @@ export function BotSetup() {
         <li>Turn the chat lines down to zero</li>
       </ol>
       <br />
-      <h3 className="text-cyan-200 text-lg" id="nightbot">
-        <Link hash="nightbot" to=".">
+      <h3 className="text-cyan-200 text-lg">
+        <Link hash="nightbot" to="/docs/bot-setup">
           For <strong>Nightbot</strong>:
         </Link>
       </h3>
@@ -76,8 +74,8 @@ export function BotSetup() {
         <li>Turn the chat lines down to zero</li>
       </ol>
       <br />
-      <h3 className="text-cyan-200 text-lg" id="streamlabs">
-        <Link hash="streamlabs" to=".">
+      <h3 className="text-cyan-200 text-lg">
+        <Link hash="streamlabs" to="/docs/bot-setup">
           For <strong>Streamlabs</strong>:
         </Link>
       </h3>

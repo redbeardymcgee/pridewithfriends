@@ -12,37 +12,39 @@ const groups = [
   {
     items: [
       {
-        hash: "campaign-setup",
         label: "Campaign setup",
-        to: ".",
+        to: "/docs/campaign-setup",
       },
     ],
     label: "Campaign",
   },
   {
     items: [
-      { hash: "overlay-setup", label: "Donation tracker", to: "." },
+      { label: "Donation tracker", to: "/docs/overlay-setup" },
       {
-        hash: "campaign-tracker",
         label: "Campaign tracker",
-        to: ".",
+        to: "/docs/campaign-tracker",
       },
     ],
     label: "Overlay",
   },
   {
     items: [
-      { hash: "bot-setup", label: "Chat commands", to: "." },
-      { hash: "streamelements", label: "StreamElements", to: "." },
-      { hash: "nightbot", label: "Nightbot", to: "." },
-      { hash: "streamlabs", label: "Streamlabs", to: "." },
+      { label: "Chat commands", to: "/docs/bot-setup" },
+      {
+        hash: "streamelements",
+        label: "StreamElements",
+        to: "/docs/bot-setup",
+      },
+      { hash: "nightbot", label: "Nightbot", to: "/docs/bot-setup" },
+      { hash: "streamlabs", label: "Streamlabs", to: "/docs/bot-setup" },
     ],
     label: "Bot",
   },
   {
     items: [
-      { hash: "donation-link-setup", label: "Links", to: "." },
-      { hash: "donation-panel-setup", label: "Panels", to: "." },
+      { label: "Links", to: "/docs/link-setup" },
+      { label: "Panels", to: "/docs/panel-setup" },
     ],
     label: "Donations",
   },
@@ -56,13 +58,14 @@ export function DocsSidebar() {
           <SidebarGroup key={group.label}>
             <SidebarGroupLabel>{group.label}</SidebarGroupLabel>
             {group.items.map((item) => (
-              <SidebarMenuItem className="list-none" key={item.hash}>
+              <SidebarMenuItem className="list-none" key={item.to}>
                 <SidebarMenuButton asChild>
                   <Link
                     activeOptions={{ includeHash: true }}
                     activeProps={{
                       className: "font-bold",
                     }}
+                    // FIXME: This `!important` feels wrong but I don't want the sidebar items to be styled like links
                     className="text-current!"
                     hash={item.hash}
                     to={item.to}
