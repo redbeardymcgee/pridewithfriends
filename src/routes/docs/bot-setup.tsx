@@ -7,7 +7,7 @@ export const Route = createFileRoute("/docs/bot-setup")({
 
 function BotSetup() {
   return (
-    <div className="m-5">
+    <div className="mx-auto max-w-prose">
       <DocsH2>Chat commands</DocsH2>
       <p>
         A <TutorialText>Timer</TutorialText> message to promote the event during

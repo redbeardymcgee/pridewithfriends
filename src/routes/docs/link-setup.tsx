@@ -7,7 +7,7 @@ export const Route = createFileRoute("/docs/link-setup")({
 
 export function LinkSetup() {
   return (
-    <div className="m-5">
+    <div className="mx-auto max-w-prose">
       <DocsH2>Set up your Donation Links!</DocsH2>
       <ol className="list-decimal pl-10">
         <li>

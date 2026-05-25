@@ -7,7 +7,7 @@ export const Route = createFileRoute("/docs/setup")({
 
 function RouteComponent() {
   return (
-    <div className="m-5">
+    <div className="mx-auto max-w-prose">
       <DocsH2>Streamer Setup</DocsH2>
       <br />
       <p>

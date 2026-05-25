@@ -7,7 +7,7 @@ export const Route = createFileRoute("/docs/panel-setup")({
 
 function PanelSetup() {
   return (
-    <div className="m-5">
+    <div className="mx-auto max-w-prose">
       <DocsH2>Donation Panel</DocsH2>
       <ol className="list-decimal pl-10">
         <li>

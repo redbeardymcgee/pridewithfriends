@@ -7,7 +7,7 @@ export const Route = createFileRoute("/docs/overlay-setup")({
 
 export function OverlaySetup() {
   return (
-    <div className="m-5">
+    <div className="mx-auto max-w-prose">
       <DocsH2>Overlay Setup</DocsH2>
       <p>
         Once you have completed the above steps, setup the tracker and overlay.

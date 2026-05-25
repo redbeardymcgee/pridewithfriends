@@ -7,7 +7,7 @@ export const Route = createFileRoute("/docs/campaign-tracker")({
 
 function CampaignTracker() {
   return (
-    <div className="m-5">
+    <div className="mx-auto max-w-prose">
       <DocsH2>Campaign Tracker</DocsH2>
       {/* TODO: Provide more direct instructions */}
       <p>

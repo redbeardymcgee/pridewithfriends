@@ -12,7 +12,7 @@ export const Route = createFileRoute("/docs/campaign-setup")({
 
 function CampaignSetup() {
   return (
-    <div className="m-5">
+    <div className="mx-auto max-w-prose">
       <DocsH2>Campaign Setup</DocsH2>
       <p>
         If you are a streamer and want to have your own individual donation
