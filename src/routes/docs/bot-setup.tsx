@@ -1,5 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router"
-import { DocsH2, TutorialText } from "#/components/typography"
+import {
+  DocsH2,
+  DocsH3,
+  ExampleText,
+  TutorialText,
+} from "#/components/typography"
 
 export const Route = createFileRoute("/docs/bot-setup")({
   component: BotSetup,
@@ -15,15 +20,17 @@ function BotSetup() {
       </p>
       <br />
       <p>
-        Join us from June 27-29 for #PrideWithFriends 2025, a coop themed
-        community fundraiser supporting the Trevor Project!
+        <ExampleText>
+          Join us from June 27-29 for #PrideWithFriends 2025, a coop themed
+          community fundraiser supporting the Trevor Project!
+        </ExampleText>
       </p>
       <br />
-      <h3 className="text-cyan-200 text-lg">
+      <DocsH3>
         <Link hash="streamelements" to="/docs/bot-setup">
           For <strong>StreamElements</strong>:
         </Link>
-      </h3>
+      </DocsH3>
       <ol className="list-decimal pl-10">
         <li>Login to your StreamElements Dashboard</li>
         <li>
@@ -48,11 +55,11 @@ function BotSetup() {
         <li>Turn the chat lines down to zero</li>
       </ol>
       <br />
-      <h3 className="text-cyan-200 text-lg">
+      <DocsH3>
         <Link hash="nightbot" to="/docs/bot-setup">
           For <strong>Nightbot</strong>:
         </Link>
-      </h3>
+      </DocsH3>
       <ol className="list-decimal pl-10">
         <li>Login to your Nightbot Dashboard</li>
         <li>
@@ -72,11 +79,11 @@ function BotSetup() {
         <li>Turn the chat lines down to zero</li>
       </ol>
       <br />
-      <h3 className="text-cyan-200 text-lg">
+      <DocsH3>
         <Link hash="streamlabs" to="/docs/bot-setup">
           For <strong>Streamlabs</strong>:
         </Link>
-      </h3>
+      </DocsH3>
       <ol className="list-decimal pl-10">
         <li>Login to your Streamlabs Dashboard</li>
         <li>
