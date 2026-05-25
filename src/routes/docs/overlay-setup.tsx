@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router"
-import { TutorialText } from "#/components/typography"
+import { DocsH2, TutorialText } from "#/components/typography"
 
 export const Route = createFileRoute("/docs/overlay-setup")({
   component: OverlaySetup,
@@ -8,7 +8,7 @@ export const Route = createFileRoute("/docs/overlay-setup")({
 export function OverlaySetup() {
   return (
     <div className="m-5">
-      <h2 className="text-cyan-300 text-xl">Overlay Setup</h2>
+      <DocsH2>Overlay Setup</DocsH2>
       <p>
         Once you have completed the above steps, setup the tracker and overlay.
       </p>

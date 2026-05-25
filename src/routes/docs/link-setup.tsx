@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router"
-import { ExampleText, TutorialText } from "#/components/typography"
+import { DocsH2, ExampleText, TutorialText } from "#/components/typography"
 
 export const Route = createFileRoute("/docs/link-setup")({
   component: LinkSetup,
@@ -8,7 +8,7 @@ export const Route = createFileRoute("/docs/link-setup")({
 export function LinkSetup() {
   return (
     <div className="m-5">
-      <h2 className="text-cyan-300 text-xl">Set up your Donation Links!</h2>
+      <DocsH2>Set up your Donation Links!</DocsH2>
       <ol className="list-decimal pl-10">
         <li>
           Visit your campaign dashboard by at{" "}

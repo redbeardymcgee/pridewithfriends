@@ -1,5 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router"
-import { TutorialText, WarningText } from "#/components/typography"
+import { createFileRoute } from "@tanstack/react-router"
+import { DocsH2, TutorialText, WarningText } from "#/components/typography"
 
 export const Route = createFileRoute("/docs/campaign-tracker")({
   component: CampaignTracker,
@@ -8,9 +8,7 @@ export const Route = createFileRoute("/docs/campaign-tracker")({
 function CampaignTracker() {
   return (
     <div className="m-5">
-      <h2 className="text-cyan-300 text-xl">
-        <Link to="/docs/campaign-tracker">Campaign Tracker</Link>
-      </h2>
+      <DocsH2>Campaign Tracker</DocsH2>
       {/* TODO: Provide more direct instructions */}
       <p>
         For those of you who <strong>are</strong> streaming, but do not want to

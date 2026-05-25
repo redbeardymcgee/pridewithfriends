@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router"
-import { ExampleText, TutorialText } from "#/components/typography"
+import { DocsH2, ExampleText, TutorialText } from "#/components/typography"
 
 export const Route = createFileRoute("/docs/panel-setup")({
   component: PanelSetup,
@@ -8,9 +8,7 @@ export const Route = createFileRoute("/docs/panel-setup")({
 function PanelSetup() {
   return (
     <div className="m-5">
-      <h2 className="text-cyan-300 text-xl">
-        <Link to="/docs/panel-setup">Donation Panel</Link>
-      </h2>
+      <DocsH2>Donation Panel</DocsH2>
       <ol className="list-decimal pl-10">
         <li>
           From the Twitch homepage, click your profile icon in the top right to

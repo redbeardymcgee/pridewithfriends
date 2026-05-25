@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router"
-import { TutorialText } from "#/components/typography"
+import { DocsH2, TutorialText } from "#/components/typography"
 
 export const Route = createFileRoute("/docs/bot-setup")({
   component: BotSetup,
@@ -8,9 +8,7 @@ export const Route = createFileRoute("/docs/bot-setup")({
 function BotSetup() {
   return (
     <div className="m-5">
-      <h2 className="text-cyan-500 text-xl">
-        <Link to="/docs/bot-setup">Chat commands</Link>
-      </h2>
+      <DocsH2>Chat commands</DocsH2>
       <p>
         A <TutorialText>Timer</TutorialText> message to promote the event during
         the week:
