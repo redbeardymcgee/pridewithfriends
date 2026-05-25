@@ -4,7 +4,6 @@ import {
   SidebarContent,
   SidebarGroup,
   SidebarGroupLabel,
-  SidebarHeader,
   SidebarMenuButton,
   SidebarMenuItem,
 } from "#/components/ui/sidebar"
@@ -52,9 +51,6 @@ const groups = [
 export function DocsSidebar() {
   return (
     <Sidebar className="fixed top-16 h-svh">
-      <SidebarHeader className="items-center">
-        <p>Navigation</p>
-      </SidebarHeader>
       <SidebarContent className="pl-3">
         {groups.map((group) => (
           <SidebarGroup key={group.label}>
