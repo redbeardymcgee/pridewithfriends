@@ -14,6 +14,7 @@ import { Route as OrganizersRouteImport } from './routes/organizers'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as DocsRouteRouteImport } from './routes/docs/route'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DocsSetupRouteImport } from './routes/docs/setup'
 import { Route as DocsPanelSetupRouteImport } from './routes/docs/panel-setup'
 import { Route as DocsOverlaySetupRouteImport } from './routes/docs/overlay-setup'
 import { Route as DocsLinkSetupRouteImport } from './routes/docs/link-setup'
@@ -45,6 +46,11 @@ const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
+} as any)
+const DocsSetupRoute = DocsSetupRouteImport.update({
+  id: '/setup',
+  path: '/setup',
+  getParentRoute: () => DocsRouteRoute,
 } as any)
 const DocsPanelSetupRoute = DocsPanelSetupRouteImport.update({
   id: '/panel-setup',
@@ -89,6 +95,7 @@ export interface FileRoutesByFullPath {
   '/docs/link-setup': typeof DocsLinkSetupRoute
   '/docs/overlay-setup': typeof DocsOverlaySetupRoute
   '/docs/panel-setup': typeof DocsPanelSetupRoute
+  '/docs/setup': typeof DocsSetupRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -102,6 +109,7 @@ export interface FileRoutesByTo {
   '/docs/link-setup': typeof DocsLinkSetupRoute
   '/docs/overlay-setup': typeof DocsOverlaySetupRoute
   '/docs/panel-setup': typeof DocsPanelSetupRoute
+  '/docs/setup': typeof DocsSetupRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -116,6 +124,7 @@ export interface FileRoutesById {
   '/docs/link-setup': typeof DocsLinkSetupRoute
   '/docs/overlay-setup': typeof DocsOverlaySetupRoute
   '/docs/panel-setup': typeof DocsPanelSetupRoute
+  '/docs/setup': typeof DocsSetupRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -131,6 +140,7 @@ export interface FileRouteTypes {
     | '/docs/link-setup'
     | '/docs/overlay-setup'
     | '/docs/panel-setup'
+    | '/docs/setup'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -144,6 +154,7 @@ export interface FileRouteTypes {
     | '/docs/link-setup'
     | '/docs/overlay-setup'
     | '/docs/panel-setup'
+    | '/docs/setup'
   id:
     | '__root__'
     | '/'
@@ -157,6 +168,7 @@ export interface FileRouteTypes {
     | '/docs/link-setup'
     | '/docs/overlay-setup'
     | '/docs/panel-setup'
+    | '/docs/setup'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -203,6 +215,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/docs/setup': {
+      id: '/docs/setup'
+      path: '/setup'
+      fullPath: '/docs/setup'
+      preLoaderRoute: typeof DocsSetupRouteImport
+      parentRoute: typeof DocsRouteRoute
     }
     '/docs/panel-setup': {
       id: '/docs/panel-setup'
@@ -256,6 +275,7 @@ interface DocsRouteRouteChildren {
   DocsLinkSetupRoute: typeof DocsLinkSetupRoute
   DocsOverlaySetupRoute: typeof DocsOverlaySetupRoute
   DocsPanelSetupRoute: typeof DocsPanelSetupRoute
+  DocsSetupRoute: typeof DocsSetupRoute
 }
 
 const DocsRouteRouteChildren: DocsRouteRouteChildren = {
@@ -265,6 +285,7 @@ const DocsRouteRouteChildren: DocsRouteRouteChildren = {
   DocsLinkSetupRoute: DocsLinkSetupRoute,
   DocsOverlaySetupRoute: DocsOverlaySetupRoute,
   DocsPanelSetupRoute: DocsPanelSetupRoute,
+  DocsSetupRoute: DocsSetupRoute,
 }
 
 const DocsRouteRouteWithChildren = DocsRouteRoute._addFileChildren(
