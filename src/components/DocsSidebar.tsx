@@ -54,6 +54,20 @@ export function DocsSidebar() {
   return (
     <Sidebar className="fixed top-16 h-svh">
       <SidebarContent className="pl-3">
+        <SidebarGroup>
+          <SidebarGroupLabel>Menu</SidebarGroupLabel>
+          <SidebarMenuItem className="list-none">
+            <SidebarMenuButton asChild>
+              <Link
+                activeProps={{ className: "font-bold" }}
+                className="text-current!"
+                to="/docs/setup"
+              >
+                Home
+              </Link>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarGroup>
         {groups.map((group) => (
           <SidebarGroup key={group.label}>
             <SidebarGroupLabel>{group.label}</SidebarGroupLabel>
