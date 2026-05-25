@@ -3,10 +3,10 @@ import { DocsSidebar } from "#/components/DocsSidebar"
 import { SidebarProvider } from "#/components/ui/sidebar"
 
 export const Route = createFileRoute("/docs")({
-  component: DocsLayoutComponent,
+  component: DocsLayout,
 })
 
-function DocsLayoutComponent() {
+function DocsLayout() {
   return (
     <SidebarProvider>
       <DocsSidebar />

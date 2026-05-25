@@ -2,10 +2,10 @@ import { createFileRoute } from "@tanstack/react-router"
 import { ExampleText, TutorialText } from "#/components/typography"
 
 export const Route = createFileRoute("/docs/link-setup")({
-  component: RouteComponent,
+  component: LinkSetup,
 })
 
-export function RouteComponent() {
+export function LinkSetup() {
   return (
     <div className="m-5">
       <h2 className="text-cyan-300 text-xl">Set up your Donation Links!</h2>

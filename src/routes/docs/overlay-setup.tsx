@@ -2,10 +2,10 @@ import { createFileRoute } from "@tanstack/react-router"
 import { TutorialText } from "#/components/typography"
 
 export const Route = createFileRoute("/docs/overlay-setup")({
-  component: RouteComponent,
+  component: OverlaySetup,
 })
 
-export function RouteComponent() {
+export function OverlaySetup() {
   return (
     <div className="m-5">
       <h2 className="text-cyan-300 text-xl">Overlay Setup</h2>

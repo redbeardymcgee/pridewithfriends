@@ -2,10 +2,10 @@ import { createFileRoute, Link } from "@tanstack/react-router"
 import { TutorialText } from "#/components/typography"
 
 export const Route = createFileRoute("/docs/bot-setup")({
-  component: RouteComponent,
+  component: BotSetup,
 })
 
-function RouteComponent() {
+function BotSetup() {
   return (
     <div className="m-5">
       <h2 className="text-cyan-500 text-xl">

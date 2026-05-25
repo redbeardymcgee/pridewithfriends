@@ -2,10 +2,10 @@ import { createFileRoute, Link } from "@tanstack/react-router"
 import { TutorialText, WarningText } from "#/components/typography"
 
 export const Route = createFileRoute("/docs/campaign-tracker")({
-  component: RouteComponent,
+  component: CampaignTracker,
 })
 
-function RouteComponent() {
+function CampaignTracker() {
   return (
     <div className="m-5">
       <h2 className="text-cyan-300 text-xl">

@@ -2,10 +2,10 @@ import { createFileRoute, Link } from "@tanstack/react-router"
 import { ExampleText, TutorialText } from "#/components/typography"
 
 export const Route = createFileRoute("/docs/panel-setup")({
-  component: RouteComponent,
+  component: PanelSetup,
 })
 
-function RouteComponent() {
+function PanelSetup() {
   return (
     <div className="m-5">
       <h2 className="text-cyan-300 text-xl">
