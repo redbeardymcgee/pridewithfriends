@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router"
+import { PrideGradient } from "#/components/typography"
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -7,7 +8,8 @@ export default function Footer() {
     <footer className="mt-20 border-(--line) border-t px-4 pt-10 pb-14 text-(--sea-ink-soft)">
       <div className="page-wrap flex flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
         <p className="m-0 text-sm">
-          &copy; {year} Pride With Friends. All rights reserved.
+          &copy; {year} <PrideGradient>Pride With Friends</PrideGradient>. All
+          rights reserved.
         </p>
         <p>
           <Link to="/organizers">Organizers</Link>

@@ -1,5 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router"
-import { DocsH2, DocsH3, TutorialText } from "#/components/typography"
+import {
+  DocsH2,
+  DocsH3,
+  PrideGradient,
+  TutorialText,
+} from "#/components/typography"
 
 export const Route = createFileRoute("/docs/join-the-team")({
   component: JoinTheTeam,
@@ -8,13 +13,15 @@ export const Route = createFileRoute("/docs/join-the-team")({
 function JoinTheTeam() {
   return (
     <div className="mx-auto max-w-prose">
-      <DocsH2>Join the Pride With Friends team!</DocsH2>
+      <DocsH2>
+        Join the <PrideGradient>Pride With Friends</PrideGradient> team!
+      </DocsH2>
       <br />
       <p>
         Our fundraisers are hosted on the{" "}
         <a href="https://tiltify.com/" rel="noreferrer" target="_blank">
-          Tiltify{" "}
-        </a>
+          Tiltify
+        </a>{" "}
         platform. For the smoothest setup experience, we have created a team
         that you may join.
       </p>
@@ -36,9 +43,10 @@ function JoinTheTeam() {
       </p>
       <br />
       <p>
-        You are now a member of the Pride with Friends Tiltify team! This makes
-        it easier for you to launch your own fundraising campaign as a part of
-        our larger overall fundraiser.
+        You are now a member of the{" "}
+        <PrideGradient>Pride With Friends</PrideGradient> Tiltify team! This
+        makes it easier for you to launch your own fundraising campaign as a
+        part of our larger overall fundraiser.
       </p>
       <br />
       <p>Next, let's launch your campaign as a member of Pride with Friends!</p>

@@ -3,7 +3,7 @@ import { Image } from "@unpic/react"
 import {
   DocsH2,
   ExampleText,
-  PrideText,
+  PrideGradient,
   TutorialText,
 } from "#/components/typography"
 import createCampaign from "@/assets/images/docs/create-campaign.png"
@@ -47,8 +47,8 @@ function CampaignSetup() {
           Select <TutorialText>No</TutorialText> when it suggests to allow other
           creators to support your fundraising effort. They will already be
           following these same steps to support the{" "}
-          <PrideText>Pride With Friends</PrideText> campaign. It should look
-          like the below image.
+          <PrideGradient>Pride With Friends</PrideGradient> campaign. It should
+          look like the below image.
         </li>
       </ol>
       <br />
@@ -69,8 +69,8 @@ function CampaignSetup() {
       <ol className="list-disc pl-10">
         <li>
           Please edit the <TutorialText>Campaign name</TutorialText> to clarify
-          that it is a <PrideText>Pride With Friends</PrideText> fundraiser.
-          Most other participants will name it
+          that it is a <PrideGradient>Pride With Friends</PrideGradient>{" "}
+          fundraiser. Most other participants will name it
           <ExampleText>Pride With Friends 2026 [YOURNAME]</ExampleText>).
         </li>
         <li>
@@ -84,7 +84,8 @@ function CampaignSetup() {
         </li>
         <li>
           You may now <TutorialText>Save & publish</TutorialText> to officially
-          launch your <PrideText>Pride With Friends</PrideText> fundraiser!
+          launch your <PrideGradient>Pride With Friends</PrideGradient>{" "}
+          fundraiser!
         </li>
       </ol>
       <br />
@@ -98,9 +99,9 @@ function CampaignSetup() {
       <br />
       <p>
         You will now be at the Campaign Dashboard for{" "}
-        <PrideText>Pride With Friends</PrideText>. This is where you may edit
-        additional details of the campaign to increase the chance of reaching
-        your donation goal.
+        <PrideGradient>Pride With Friends</PrideGradient>. This is where you may
+        edit additional details of the campaign to increase the chance of
+        reaching your donation goal.
         {/* TODO: Update this with a link to next steps, such as editing incentives or sharing campaign/dono links */}
       </p>
     </div>

@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router"
 import { createServerFn } from "@tanstack/react-start"
 import { ApiClient } from "@twurple/api"
 import { AppTokenAuthProvider } from "@twurple/auth"
+import { PrideGradient } from "#/components/typography"
 import { Avatar, AvatarFallback, AvatarImage } from "#/components/ui/avatar"
 import { Card, CardContent, CardHeader, CardTitle } from "#/components/ui/card"
 import TwitchLogo from "@/assets/icons/glitch_flat_purple.svg?react"
@@ -97,7 +98,8 @@ function StreamerCards() {
       <div className="bg-slate-900 text-center">
         <h1 className="my-2 text-4xl">Streamers</h1>
         <p className="text-slate-400 text-xl">
-          Meet the amazing gamers supporting Pride With Friends!
+          Meet the amazing gamers supporting{" "}
+          <PrideGradient>Pride With Friends</PrideGradient>!
         </p>
       </div>
       <div className="mt-4 grid grid-cols-3 justify-items-center gap-y-4">

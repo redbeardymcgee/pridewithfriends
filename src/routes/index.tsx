@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router"
+import { PrideGradient } from "#/components/typography"
 
 export const Route = createFileRoute("/")({ component: App })
 
@@ -12,7 +13,7 @@ function App() {
           Slay the Spire with friends and pros
         </p>
         <h1 className="display-title mb-5 max-w-3xl font-bold text-(--sea-ink) text-4xl leading-[1.02] tracking-tight sm:text-6xl">
-          Pride With Friends
+          <PrideGradient>Pride With Friends</PrideGradient>
         </h1>
         <p className="mb-8 max-w-2xl text-(--sea-ink-soft) text-base sm:text-lg">
           A fun way to support our friends and neighbors in the queer community,
