@@ -18,6 +18,7 @@ import { Route as DocsSetupRouteImport } from './routes/docs/setup'
 import { Route as DocsPanelSetupRouteImport } from './routes/docs/panel-setup'
 import { Route as DocsOverlaySetupRouteImport } from './routes/docs/overlay-setup'
 import { Route as DocsLinkSetupRouteImport } from './routes/docs/link-setup'
+import { Route as DocsJoinTheTeamRouteImport } from './routes/docs/join-the-team'
 import { Route as DocsCampaignTrackerRouteImport } from './routes/docs/campaign-tracker'
 import { Route as DocsCampaignSetupRouteImport } from './routes/docs/campaign-setup'
 import { Route as DocsBotSetupRouteImport } from './routes/docs/bot-setup'
@@ -67,6 +68,11 @@ const DocsLinkSetupRoute = DocsLinkSetupRouteImport.update({
   path: '/link-setup',
   getParentRoute: () => DocsRouteRoute,
 } as any)
+const DocsJoinTheTeamRoute = DocsJoinTheTeamRouteImport.update({
+  id: '/join-the-team',
+  path: '/join-the-team',
+  getParentRoute: () => DocsRouteRoute,
+} as any)
 const DocsCampaignTrackerRoute = DocsCampaignTrackerRouteImport.update({
   id: '/campaign-tracker',
   path: '/campaign-tracker',
@@ -92,6 +98,7 @@ export interface FileRoutesByFullPath {
   '/docs/bot-setup': typeof DocsBotSetupRoute
   '/docs/campaign-setup': typeof DocsCampaignSetupRoute
   '/docs/campaign-tracker': typeof DocsCampaignTrackerRoute
+  '/docs/join-the-team': typeof DocsJoinTheTeamRoute
   '/docs/link-setup': typeof DocsLinkSetupRoute
   '/docs/overlay-setup': typeof DocsOverlaySetupRoute
   '/docs/panel-setup': typeof DocsPanelSetupRoute
@@ -106,6 +113,7 @@ export interface FileRoutesByTo {
   '/docs/bot-setup': typeof DocsBotSetupRoute
   '/docs/campaign-setup': typeof DocsCampaignSetupRoute
   '/docs/campaign-tracker': typeof DocsCampaignTrackerRoute
+  '/docs/join-the-team': typeof DocsJoinTheTeamRoute
   '/docs/link-setup': typeof DocsLinkSetupRoute
   '/docs/overlay-setup': typeof DocsOverlaySetupRoute
   '/docs/panel-setup': typeof DocsPanelSetupRoute
@@ -121,6 +129,7 @@ export interface FileRoutesById {
   '/docs/bot-setup': typeof DocsBotSetupRoute
   '/docs/campaign-setup': typeof DocsCampaignSetupRoute
   '/docs/campaign-tracker': typeof DocsCampaignTrackerRoute
+  '/docs/join-the-team': typeof DocsJoinTheTeamRoute
   '/docs/link-setup': typeof DocsLinkSetupRoute
   '/docs/overlay-setup': typeof DocsOverlaySetupRoute
   '/docs/panel-setup': typeof DocsPanelSetupRoute
@@ -137,6 +146,7 @@ export interface FileRouteTypes {
     | '/docs/bot-setup'
     | '/docs/campaign-setup'
     | '/docs/campaign-tracker'
+    | '/docs/join-the-team'
     | '/docs/link-setup'
     | '/docs/overlay-setup'
     | '/docs/panel-setup'
@@ -151,6 +161,7 @@ export interface FileRouteTypes {
     | '/docs/bot-setup'
     | '/docs/campaign-setup'
     | '/docs/campaign-tracker'
+    | '/docs/join-the-team'
     | '/docs/link-setup'
     | '/docs/overlay-setup'
     | '/docs/panel-setup'
@@ -165,6 +176,7 @@ export interface FileRouteTypes {
     | '/docs/bot-setup'
     | '/docs/campaign-setup'
     | '/docs/campaign-tracker'
+    | '/docs/join-the-team'
     | '/docs/link-setup'
     | '/docs/overlay-setup'
     | '/docs/panel-setup'
@@ -244,6 +256,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DocsLinkSetupRouteImport
       parentRoute: typeof DocsRouteRoute
     }
+    '/docs/join-the-team': {
+      id: '/docs/join-the-team'
+      path: '/join-the-team'
+      fullPath: '/docs/join-the-team'
+      preLoaderRoute: typeof DocsJoinTheTeamRouteImport
+      parentRoute: typeof DocsRouteRoute
+    }
     '/docs/campaign-tracker': {
       id: '/docs/campaign-tracker'
       path: '/campaign-tracker'
@@ -272,6 +291,7 @@ interface DocsRouteRouteChildren {
   DocsBotSetupRoute: typeof DocsBotSetupRoute
   DocsCampaignSetupRoute: typeof DocsCampaignSetupRoute
   DocsCampaignTrackerRoute: typeof DocsCampaignTrackerRoute
+  DocsJoinTheTeamRoute: typeof DocsJoinTheTeamRoute
   DocsLinkSetupRoute: typeof DocsLinkSetupRoute
   DocsOverlaySetupRoute: typeof DocsOverlaySetupRoute
   DocsPanelSetupRoute: typeof DocsPanelSetupRoute
@@ -282,6 +302,7 @@ const DocsRouteRouteChildren: DocsRouteRouteChildren = {
   DocsBotSetupRoute: DocsBotSetupRoute,
   DocsCampaignSetupRoute: DocsCampaignSetupRoute,
   DocsCampaignTrackerRoute: DocsCampaignTrackerRoute,
+  DocsJoinTheTeamRoute: DocsJoinTheTeamRoute,
   DocsLinkSetupRoute: DocsLinkSetupRoute,
   DocsOverlaySetupRoute: DocsOverlaySetupRoute,
   DocsPanelSetupRoute: DocsPanelSetupRoute,

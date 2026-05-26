@@ -11,6 +11,7 @@ import {
 const groups = [
   {
     items: [
+      { label: "Join the team", to: "/docs/join-the-team" },
       {
         label: "Campaign setup",
         to: "/docs/campaign-setup",
