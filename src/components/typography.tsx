@@ -1,6 +1,11 @@
 import { cn } from "#/lib/utils"
 import { GradientText, type GradientTextProps } from "./GradientText"
 
+interface TextProps {
+  children: React.ReactNode
+  className?: string
+}
+
 export function DocsH2({ children }: { children: React.ReactNode }) {
   return (
     <h2 className="justify-self-center text-3xl text-cyan-300">{children}</h2>
@@ -13,13 +18,7 @@ export function DocsH3({ children }: { children: React.ReactNode }) {
   )
 }
 
-export function TutorialText({
-  children,
-  className,
-}: {
-  children: React.ReactNode
-  className?: string
-}) {
+export function TutorialText({ children, className }: TextProps) {
   return (
     <strong
       className={cn(
@@ -32,13 +31,7 @@ export function TutorialText({
   )
 }
 
-export function ExampleText({
-  children,
-  className,
-}: {
-  children: React.ReactNode
-  className?: string
-}) {
+export function ExampleText({ children, className }: TextProps) {
   return (
     <em
       className={cn(
@@ -51,13 +44,7 @@ export function ExampleText({
   )
 }
 
-export function WarningText({
-  children,
-  className,
-}: {
-  children: React.ReactNode
-  className?: string
-}) {
+export function WarningText({ children, className }: TextProps) {
   return (
     <strong
       className={cn(
@@ -70,7 +57,7 @@ export function WarningText({
   )
 }
 
-export function PrideText({
+export function PrideGradient({
   children,
   className = "inline-flex",
   animationSpeed = 8,
