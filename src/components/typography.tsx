@@ -1,11 +1,15 @@
 import { cn } from "#/lib/utils"
 
 export function DocsH2({ children }: { children: React.ReactNode }) {
-  return <h2 className="text-cyan-300 text-xl">{children}</h2>
+  return (
+    <h2 className="justify-self-center text-3xl text-cyan-300">{children}</h2>
+  )
 }
 
 export function DocsH3({ children }: { children: React.ReactNode }) {
-  return <h3 className="text-cyan-200 text-lg">{children}</h3>
+  return (
+    <h3 className="justify-self-center text-2xl text-cyan-200">{children}</h3>
+  )
 }
 
 export function TutorialText({
