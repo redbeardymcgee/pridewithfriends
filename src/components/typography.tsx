@@ -1,4 +1,5 @@
 import { cn } from "#/lib/utils"
+import { GradientText, type GradientTextProps } from "./GradientText"
 
 export function DocsH2({ children }: { children: React.ReactNode }) {
   return (
@@ -66,5 +67,39 @@ export function WarningText({
     >
       {children}
     </strong>
+  )
+}
+
+export function PrideText({
+  children,
+  className = "inline-flex",
+  animationSpeed = 8,
+  showBorder = false,
+  direction = "vertical",
+  pauseOnHover = false,
+  yoyo = false,
+}: GradientTextProps) {
+  return (
+    <GradientText
+      animationSpeed={animationSpeed}
+      className={className}
+      // NOTE: Based on Gilbert Baker flag
+      colors={[
+        "#FF6599",
+        "#FF0000",
+        "#FF8E00",
+        "#FFFF00",
+        "#008E00",
+        "#00C0C0",
+        "#400098",
+        "#8E008E",
+      ]}
+      direction={direction}
+      pauseOnHover={pauseOnHover}
+      showBorder={showBorder}
+      yoyo={yoyo}
+    >
+      {children}
+    </GradientText>
   )
 }
