@@ -22,6 +22,7 @@ import { Route as DocsJoinTheTeamRouteImport } from './routes/docs/join-the-team
 import { Route as DocsCampaignTrackerRouteImport } from './routes/docs/campaign-tracker'
 import { Route as DocsCampaignSetupRouteImport } from './routes/docs/campaign-setup'
 import { Route as DocsBotSetupRouteImport } from './routes/docs/bot-setup'
+import { Route as DocsSplatRouteImport } from './routes/docs/$'
 
 const StreamersRoute = StreamersRouteImport.update({
   id: '/streamers',
@@ -88,6 +89,11 @@ const DocsBotSetupRoute = DocsBotSetupRouteImport.update({
   path: '/bot-setup',
   getParentRoute: () => DocsRouteRoute,
 } as any)
+const DocsSplatRoute = DocsSplatRouteImport.update({
+  id: '/$',
+  path: '/$',
+  getParentRoute: () => DocsRouteRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -95,6 +101,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/organizers': typeof OrganizersRoute
   '/streamers': typeof StreamersRoute
+  '/docs/$': typeof DocsSplatRoute
   '/docs/bot-setup': typeof DocsBotSetupRoute
   '/docs/campaign-setup': typeof DocsCampaignSetupRoute
   '/docs/campaign-tracker': typeof DocsCampaignTrackerRoute
@@ -110,6 +117,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/organizers': typeof OrganizersRoute
   '/streamers': typeof StreamersRoute
+  '/docs/$': typeof DocsSplatRoute
   '/docs/bot-setup': typeof DocsBotSetupRoute
   '/docs/campaign-setup': typeof DocsCampaignSetupRoute
   '/docs/campaign-tracker': typeof DocsCampaignTrackerRoute
@@ -126,6 +134,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/organizers': typeof OrganizersRoute
   '/streamers': typeof StreamersRoute
+  '/docs/$': typeof DocsSplatRoute
   '/docs/bot-setup': typeof DocsBotSetupRoute
   '/docs/campaign-setup': typeof DocsCampaignSetupRoute
   '/docs/campaign-tracker': typeof DocsCampaignTrackerRoute
@@ -143,6 +152,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/organizers'
     | '/streamers'
+    | '/docs/$'
     | '/docs/bot-setup'
     | '/docs/campaign-setup'
     | '/docs/campaign-tracker'
@@ -158,6 +168,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/organizers'
     | '/streamers'
+    | '/docs/$'
     | '/docs/bot-setup'
     | '/docs/campaign-setup'
     | '/docs/campaign-tracker'
@@ -173,6 +184,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/organizers'
     | '/streamers'
+    | '/docs/$'
     | '/docs/bot-setup'
     | '/docs/campaign-setup'
     | '/docs/campaign-tracker'
@@ -284,10 +296,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DocsBotSetupRouteImport
       parentRoute: typeof DocsRouteRoute
     }
+    '/docs/$': {
+      id: '/docs/$'
+      path: '/$'
+      fullPath: '/docs/$'
+      preLoaderRoute: typeof DocsSplatRouteImport
+      parentRoute: typeof DocsRouteRoute
+    }
   }
 }
 
 interface DocsRouteRouteChildren {
+  DocsSplatRoute: typeof DocsSplatRoute
   DocsBotSetupRoute: typeof DocsBotSetupRoute
   DocsCampaignSetupRoute: typeof DocsCampaignSetupRoute
   DocsCampaignTrackerRoute: typeof DocsCampaignTrackerRoute
@@ -299,6 +319,7 @@ interface DocsRouteRouteChildren {
 }
 
 const DocsRouteRouteChildren: DocsRouteRouteChildren = {
+  DocsSplatRoute: DocsSplatRoute,
   DocsBotSetupRoute: DocsBotSetupRoute,
   DocsCampaignSetupRoute: DocsCampaignSetupRoute,
   DocsCampaignTrackerRoute: DocsCampaignTrackerRoute,

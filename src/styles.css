@@ -4,6 +4,9 @@
 
 @import 'tw-animate-css';
 
+@import "@prose-ui/style/prose-ui.css";
+@import "@prose-ui/style/katex.css";
+
 @custom-variant dark (&:is(.dark *));
 
 :root {

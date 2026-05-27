@@ -19,7 +19,8 @@
       "**/index.html",
       "**/vite.config.ts",
       "!**/src/routeTree.gen.ts",
-      "!**/src/styles.css"
+      "!**/src/styles.css",
+      "./content-collections.ts"
     ]
   },
   "formatter": {
@@ -40,9 +41,7 @@
           "fix": "safe",
           "level": "info",
           "options": {
-            "functions": [
-              "cn"
-            ]
+            "functions": ["cn"]
           }
         }
       },
