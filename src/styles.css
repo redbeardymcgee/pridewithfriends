@@ -339,6 +339,32 @@ a {
   background: color-mix(in oklab, var(--header-bg) 84%, transparent 16%);
 }
 
+.pride-gradient {
+  background-image: linear-gradient(
+    to bottom,
+    #FF6599,
+    #FF0000,
+    #FF8E00,
+    #FFFF00,
+    #008E00,
+    #00C0C0,
+    #400098,
+    #8E008E,
+    #FF6599
+  );
+  background-size: 100% 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: pride-gradient 8s linear infinite;
+}
+
+@keyframes pride-gradient {
+  to {
+    background-position: 50% 100%;
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

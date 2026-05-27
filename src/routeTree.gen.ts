@@ -14,14 +14,6 @@ import { Route as OrganizersRouteImport } from './routes/organizers'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as DocsRouteRouteImport } from './routes/docs/route'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as DocsSetupRouteImport } from './routes/docs/setup'
-import { Route as DocsPanelSetupRouteImport } from './routes/docs/panel-setup'
-import { Route as DocsOverlaySetupRouteImport } from './routes/docs/overlay-setup'
-import { Route as DocsLinkSetupRouteImport } from './routes/docs/link-setup'
-import { Route as DocsJoinTheTeamRouteImport } from './routes/docs/join-the-team'
-import { Route as DocsCampaignTrackerRouteImport } from './routes/docs/campaign-tracker'
-import { Route as DocsCampaignSetupRouteImport } from './routes/docs/campaign-setup'
-import { Route as DocsBotSetupRouteImport } from './routes/docs/bot-setup'
 import { Route as DocsSplatRouteImport } from './routes/docs/$'
 
 const StreamersRoute = StreamersRouteImport.update({
@@ -49,46 +41,6 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DocsSetupRoute = DocsSetupRouteImport.update({
-  id: '/setup',
-  path: '/setup',
-  getParentRoute: () => DocsRouteRoute,
-} as any)
-const DocsPanelSetupRoute = DocsPanelSetupRouteImport.update({
-  id: '/panel-setup',
-  path: '/panel-setup',
-  getParentRoute: () => DocsRouteRoute,
-} as any)
-const DocsOverlaySetupRoute = DocsOverlaySetupRouteImport.update({
-  id: '/overlay-setup',
-  path: '/overlay-setup',
-  getParentRoute: () => DocsRouteRoute,
-} as any)
-const DocsLinkSetupRoute = DocsLinkSetupRouteImport.update({
-  id: '/link-setup',
-  path: '/link-setup',
-  getParentRoute: () => DocsRouteRoute,
-} as any)
-const DocsJoinTheTeamRoute = DocsJoinTheTeamRouteImport.update({
-  id: '/join-the-team',
-  path: '/join-the-team',
-  getParentRoute: () => DocsRouteRoute,
-} as any)
-const DocsCampaignTrackerRoute = DocsCampaignTrackerRouteImport.update({
-  id: '/campaign-tracker',
-  path: '/campaign-tracker',
-  getParentRoute: () => DocsRouteRoute,
-} as any)
-const DocsCampaignSetupRoute = DocsCampaignSetupRouteImport.update({
-  id: '/campaign-setup',
-  path: '/campaign-setup',
-  getParentRoute: () => DocsRouteRoute,
-} as any)
-const DocsBotSetupRoute = DocsBotSetupRouteImport.update({
-  id: '/bot-setup',
-  path: '/bot-setup',
-  getParentRoute: () => DocsRouteRoute,
-} as any)
 const DocsSplatRoute = DocsSplatRouteImport.update({
   id: '/$',
   path: '/$',
@@ -102,14 +54,6 @@ export interface FileRoutesByFullPath {
   '/organizers': typeof OrganizersRoute
   '/streamers': typeof StreamersRoute
   '/docs/$': typeof DocsSplatRoute
-  '/docs/bot-setup': typeof DocsBotSetupRoute
-  '/docs/campaign-setup': typeof DocsCampaignSetupRoute
-  '/docs/campaign-tracker': typeof DocsCampaignTrackerRoute
-  '/docs/join-the-team': typeof DocsJoinTheTeamRoute
-  '/docs/link-setup': typeof DocsLinkSetupRoute
-  '/docs/overlay-setup': typeof DocsOverlaySetupRoute
-  '/docs/panel-setup': typeof DocsPanelSetupRoute
-  '/docs/setup': typeof DocsSetupRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -118,14 +62,6 @@ export interface FileRoutesByTo {
   '/organizers': typeof OrganizersRoute
   '/streamers': typeof StreamersRoute
   '/docs/$': typeof DocsSplatRoute
-  '/docs/bot-setup': typeof DocsBotSetupRoute
-  '/docs/campaign-setup': typeof DocsCampaignSetupRoute
-  '/docs/campaign-tracker': typeof DocsCampaignTrackerRoute
-  '/docs/join-the-team': typeof DocsJoinTheTeamRoute
-  '/docs/link-setup': typeof DocsLinkSetupRoute
-  '/docs/overlay-setup': typeof DocsOverlaySetupRoute
-  '/docs/panel-setup': typeof DocsPanelSetupRoute
-  '/docs/setup': typeof DocsSetupRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -135,48 +71,12 @@ export interface FileRoutesById {
   '/organizers': typeof OrganizersRoute
   '/streamers': typeof StreamersRoute
   '/docs/$': typeof DocsSplatRoute
-  '/docs/bot-setup': typeof DocsBotSetupRoute
-  '/docs/campaign-setup': typeof DocsCampaignSetupRoute
-  '/docs/campaign-tracker': typeof DocsCampaignTrackerRoute
-  '/docs/join-the-team': typeof DocsJoinTheTeamRoute
-  '/docs/link-setup': typeof DocsLinkSetupRoute
-  '/docs/overlay-setup': typeof DocsOverlaySetupRoute
-  '/docs/panel-setup': typeof DocsPanelSetupRoute
-  '/docs/setup': typeof DocsSetupRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/docs'
-    | '/about'
-    | '/organizers'
-    | '/streamers'
-    | '/docs/$'
-    | '/docs/bot-setup'
-    | '/docs/campaign-setup'
-    | '/docs/campaign-tracker'
-    | '/docs/join-the-team'
-    | '/docs/link-setup'
-    | '/docs/overlay-setup'
-    | '/docs/panel-setup'
-    | '/docs/setup'
+  fullPaths: '/' | '/docs' | '/about' | '/organizers' | '/streamers' | '/docs/$'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/docs'
-    | '/about'
-    | '/organizers'
-    | '/streamers'
-    | '/docs/$'
-    | '/docs/bot-setup'
-    | '/docs/campaign-setup'
-    | '/docs/campaign-tracker'
-    | '/docs/join-the-team'
-    | '/docs/link-setup'
-    | '/docs/overlay-setup'
-    | '/docs/panel-setup'
-    | '/docs/setup'
+  to: '/' | '/docs' | '/about' | '/organizers' | '/streamers' | '/docs/$'
   id:
     | '__root__'
     | '/'
@@ -185,14 +85,6 @@ export interface FileRouteTypes {
     | '/organizers'
     | '/streamers'
     | '/docs/$'
-    | '/docs/bot-setup'
-    | '/docs/campaign-setup'
-    | '/docs/campaign-tracker'
-    | '/docs/join-the-team'
-    | '/docs/link-setup'
-    | '/docs/overlay-setup'
-    | '/docs/panel-setup'
-    | '/docs/setup'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -240,62 +132,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/docs/setup': {
-      id: '/docs/setup'
-      path: '/setup'
-      fullPath: '/docs/setup'
-      preLoaderRoute: typeof DocsSetupRouteImport
-      parentRoute: typeof DocsRouteRoute
-    }
-    '/docs/panel-setup': {
-      id: '/docs/panel-setup'
-      path: '/panel-setup'
-      fullPath: '/docs/panel-setup'
-      preLoaderRoute: typeof DocsPanelSetupRouteImport
-      parentRoute: typeof DocsRouteRoute
-    }
-    '/docs/overlay-setup': {
-      id: '/docs/overlay-setup'
-      path: '/overlay-setup'
-      fullPath: '/docs/overlay-setup'
-      preLoaderRoute: typeof DocsOverlaySetupRouteImport
-      parentRoute: typeof DocsRouteRoute
-    }
-    '/docs/link-setup': {
-      id: '/docs/link-setup'
-      path: '/link-setup'
-      fullPath: '/docs/link-setup'
-      preLoaderRoute: typeof DocsLinkSetupRouteImport
-      parentRoute: typeof DocsRouteRoute
-    }
-    '/docs/join-the-team': {
-      id: '/docs/join-the-team'
-      path: '/join-the-team'
-      fullPath: '/docs/join-the-team'
-      preLoaderRoute: typeof DocsJoinTheTeamRouteImport
-      parentRoute: typeof DocsRouteRoute
-    }
-    '/docs/campaign-tracker': {
-      id: '/docs/campaign-tracker'
-      path: '/campaign-tracker'
-      fullPath: '/docs/campaign-tracker'
-      preLoaderRoute: typeof DocsCampaignTrackerRouteImport
-      parentRoute: typeof DocsRouteRoute
-    }
-    '/docs/campaign-setup': {
-      id: '/docs/campaign-setup'
-      path: '/campaign-setup'
-      fullPath: '/docs/campaign-setup'
-      preLoaderRoute: typeof DocsCampaignSetupRouteImport
-      parentRoute: typeof DocsRouteRoute
-    }
-    '/docs/bot-setup': {
-      id: '/docs/bot-setup'
-      path: '/bot-setup'
-      fullPath: '/docs/bot-setup'
-      preLoaderRoute: typeof DocsBotSetupRouteImport
-      parentRoute: typeof DocsRouteRoute
-    }
     '/docs/$': {
       id: '/docs/$'
       path: '/$'
@@ -308,26 +144,10 @@ declare module '@tanstack/react-router' {
 
 interface DocsRouteRouteChildren {
   DocsSplatRoute: typeof DocsSplatRoute
-  DocsBotSetupRoute: typeof DocsBotSetupRoute
-  DocsCampaignSetupRoute: typeof DocsCampaignSetupRoute
-  DocsCampaignTrackerRoute: typeof DocsCampaignTrackerRoute
-  DocsJoinTheTeamRoute: typeof DocsJoinTheTeamRoute
-  DocsLinkSetupRoute: typeof DocsLinkSetupRoute
-  DocsOverlaySetupRoute: typeof DocsOverlaySetupRoute
-  DocsPanelSetupRoute: typeof DocsPanelSetupRoute
-  DocsSetupRoute: typeof DocsSetupRoute
 }
 
 const DocsRouteRouteChildren: DocsRouteRouteChildren = {
   DocsSplatRoute: DocsSplatRoute,
-  DocsBotSetupRoute: DocsBotSetupRoute,
-  DocsCampaignSetupRoute: DocsCampaignSetupRoute,
-  DocsCampaignTrackerRoute: DocsCampaignTrackerRoute,
-  DocsJoinTheTeamRoute: DocsJoinTheTeamRoute,
-  DocsLinkSetupRoute: DocsLinkSetupRoute,
-  DocsOverlaySetupRoute: DocsOverlaySetupRoute,
-  DocsPanelSetupRoute: DocsPanelSetupRoute,
-  DocsSetupRoute: DocsSetupRoute,
 }
 
 const DocsRouteRouteWithChildren = DocsRouteRoute._addFileChildren(

@@ -10,6 +10,10 @@ import {
 
 const groups = [
   {
+    items: [{ label: "Home", to: "/docs/setup" }],
+    label: "Menu",
+  },
+  {
     items: [
       { label: "Join the team", to: "/docs/join-the-team" },
       {
@@ -31,14 +35,9 @@ const groups = [
   },
   {
     items: [
-      { label: "Chat commands", to: "/docs/bot-setup" },
-      {
-        hash: "streamelements",
-        label: "StreamElements",
-        to: "/docs/bot-setup",
-      },
-      { hash: "nightbot", label: "Nightbot", to: "/docs/bot-setup" },
-      { hash: "streamlabs", label: "Streamlabs", to: "/docs/bot-setup" },
+      { label: "StreamElements", to: "/docs/streamelements" },
+      { label: "Nightbot", to: "/docs/nightbot" },
+      { label: "Streamlabs", to: "/docs/streamlabs" },
     ],
     label: "Bot",
   },
@@ -55,34 +54,18 @@ export function DocsSidebar() {
   return (
     <Sidebar className="fixed top-16 h-svh">
       <SidebarContent className="pl-3">
-        <SidebarGroup>
-          <SidebarGroupLabel>Menu</SidebarGroupLabel>
-          <SidebarMenuItem className="list-none">
-            <SidebarMenuButton asChild>
-              <Link
-                activeProps={{ className: "font-bold" }}
-                className="text-current!"
-                to="/docs/setup"
-              >
-                Home
-              </Link>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-        </SidebarGroup>
         {groups.map((group) => (
           <SidebarGroup key={group.label}>
             <SidebarGroupLabel>{group.label}</SidebarGroupLabel>
             {group.items.map((item) => (
-              <SidebarMenuItem className="list-none" key={item.to}>
+              <SidebarMenuItem className="list-none" key={item.label}>
                 <SidebarMenuButton asChild>
                   <Link
-                    activeOptions={{ includeHash: true }}
                     activeProps={{
                       className: "font-bold",
                     }}
                     // FIXME: This `!important` feels wrong but I don't want the sidebar items to be styled like links
                     className="text-current!"
-                    hash={item.hash}
                     to={item.to}
                   >
                     {item.label}

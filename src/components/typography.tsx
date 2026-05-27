@@ -1,5 +1,4 @@
 import { cn } from "#/lib/utils"
-import { GradientText, type GradientTextProps } from "./GradientText"
 
 interface TextProps {
   children: React.ReactNode

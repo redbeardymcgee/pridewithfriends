@@ -2,6 +2,20 @@ import { MDXContent } from "@content-collections/mdx/react"
 import { mdxComponents } from "@prose-ui/react"
 import { createFileRoute, notFound } from "@tanstack/react-router"
 import { allDocs } from "content-collections"
+import {
+  ExampleText,
+  PrideGradient,
+  TutorialText,
+  WarningText,
+} from "#/components/typography"
+
+const components = {
+  ...mdxComponents,
+  ExampleText,
+  PrideGradient,
+  TutorialText,
+  WarningText,
+}
 
 const findPage = (pathArr: string[]) => {
   const path = pathArr && pathArr.length > 0 ? `${pathArr.join("/")}` : "/"
@@ -34,7 +48,7 @@ function DocPage() {
   return (
     <div className="min-h-screen w-full bg-[hsl(var(--p-color-bg))]">
       <article className="prose-ui mx-auto w-full max-w-3xl px-4 py-8">
-        <MDXContent code={page.mdx} components={mdxComponents} />
+        <MDXContent code={page.mdx} components={components} />
       </article>
     </div>
   )
