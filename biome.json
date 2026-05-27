@@ -3,7 +3,6 @@
   "assist": {
     "actions": {
       "source": {
-        "noDuplicateClasses": "on",
         "organizeImports": "on",
         "useSortedAttributes": "on",
         "useSortedKeys": "on",
