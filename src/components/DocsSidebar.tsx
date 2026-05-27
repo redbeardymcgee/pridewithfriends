@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router"
+import type { ComponentProps } from "react"
 import {
   Sidebar,
   SidebarContent,
@@ -7,6 +8,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "#/components/ui/sidebar"
+import { cn } from "#/lib/utils"
 
 const groups = [
   {
@@ -50,9 +52,9 @@ const groups = [
   },
 ]
 
-export function DocsSidebar() {
+export function DocsSidebar(props: ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar className="fixed top-16 h-svh">
+    <Sidebar {...props} className={cn("fixed top-16 h-svh", props.className)}>
       <SidebarContent className="pl-3">
         {groups.map((group) => (
           <SidebarGroup key={group.label}>
@@ -64,7 +66,7 @@ export function DocsSidebar() {
                     activeProps={{
                       className: "font-bold",
                     }}
-                    // FIXME: This `!important` feels wrong but I don't want the sidebar items to be styled like links
+                    // HACK: This `!important` feels wrong but I don't want the sidebar items to be styled like links
                     className="text-current!"
                     to={item.to}
                   >
