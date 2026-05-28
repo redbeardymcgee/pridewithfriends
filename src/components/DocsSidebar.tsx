@@ -52,9 +52,12 @@ const groups = [
   },
 ]
 
-export function DocsSidebar(props: ComponentProps<typeof Sidebar>) {
+export function DocsSidebar({
+  className,
+  ...props
+}: ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar {...props} className={cn("fixed top-16 h-svh", props.className)}>
+    <Sidebar {...props} className={cn("fixed top-16 h-svh", className)}>
       <SidebarContent className="pl-3">
         {groups.map((group) => (
           <SidebarGroup key={group.label}>
