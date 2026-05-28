@@ -26,13 +26,7 @@ const groups = [
     label: "Campaign",
   },
   {
-    items: [
-      { label: "Donation tracker", to: "/docs/overlay-setup" },
-      {
-        label: "Campaign tracker",
-        to: "/docs/campaign-tracker",
-      },
-    ],
+    items: [{ label: "Donation tracker", to: "/docs/overlay-setup" }],
     label: "Overlay",
   },
   {
