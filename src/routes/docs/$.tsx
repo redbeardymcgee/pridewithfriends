@@ -8,9 +8,11 @@ import {
   TutorialText,
   WarningText,
 } from "#/components/typography"
+import { CurrentYear } from "#/components/utils"
 
 const components = {
   ...mdxComponents,
+  CurrentYear,
   ExampleText,
   PrideGradient,
   TutorialText,
