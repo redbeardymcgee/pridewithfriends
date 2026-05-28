@@ -31,6 +31,7 @@ const groups = [
   },
   {
     items: [
+      { label: "Chatbot commands", to: "/docs/chatbot-commands" },
       { label: "StreamElements", to: "/docs/streamelements" },
       { label: "Nightbot", to: "/docs/nightbot" },
       { label: "Streamlabs", to: "/docs/streamlabs" },
