@@ -2,56 +2,73 @@
 title: Overlay Setup
 ---
 
-## Overlay Setup
+## Create overlays
 
-Once you have completed the above steps, setup the tracker and overlay.
+After joining the <PrideGradient>Pride With Friends</PrideGradient> team and campaign, you will want to add stream overlays to alert yourself and your users to incoming donations. It also enables you to display the progress of your campaign and total donations received already.
 
 <Steps>
-  <Step title="Open overlays">
-    <p>From the published campaign dashboard, click <TutorialText>Overlays</TutorialText> on the top bar</p>
+  <Step title="Dashboard">
+    Visit your [Tiltify dashboard](https://app.tiltify.com).
   </Step>
-  <Step title="Create new overlay">
-    <p>Create new overlay</p>
+  <Step title="Campaigns">
+    In the left sidebar, click <TutorialText>Campaigns</TutorialText>.
+
+    <Callout variant="tip">
+      This page can also be found directly [here](https://app.tiltify.com/fundraiser).
+    </Callout>
+
   </Step>
-  <Step title="Blank Slate">
-    <p>Choose <TutorialText>Blank Slate</TutorialText> to start from an empty overlay</p>
+  <Step title="Your campaign">
+    Find and click the campaign you created during [Campaign setup](/docs/campaign-setup).
   </Step>
-  <Step title="The Default">
-    <p>Choose <TutorialText>The Default</TutorialText> to start with a basic overlay that already includes the <TutorialText>Alert Box</TutorialText> and <TutorialText>Event List</TutorialText> and a QR code for mobile users</p>
+  <Step title="Branding">
+    From this new dashboard, find <TutorialText>Branding</TutorialText> in the left sidebar.
   </Step>
-  <Step title="Customize">
-    <p>Use the editor to add and remove widgets, edit colors, add sounds, move them around and more</p>
+  <Step title="Overlays">
+    Click <TutorialText>Overlays</TutorialText> in the sidebar.
   </Step>
-  <Step title="Save">
-    <p>Save the changes with the button above the overlay preview</p>
-  </Step>
-  <Step title="Copy URL">
-    <p>Copy the overlay URL</p>
-  </Step>
-  <Step title="Add to OBS">
-    <p>Add the overlay as a <TutorialText>Browser Source</TutorialText> in OBS</p>
+  <Step title="Create">
+    Click <TutorialText>Create an overlay</TutorialText>.
   </Step>
 </Steps>
 
-You can edit this overlay on this page at any time, even while broadcasting. If you want to control the placement of each part of your overlay in OBS:
+A default overlay with all the basic elements is now presented. It includes a classic tracker across the top with a list of recent donations below. In the bottom left you will see a QR code that links directly to your campaign's donation page. In the bottom right, there is an animated alert box.
+
+<Callout variant="tip">
+  While this overlay may be used as-is, we strongly encourage you to customize the <TutorialText>Alert Box</TutorialText> to add a cute gif and a sound. This helps ensure that you don't miss incoming donations!
+</Callout>
+
+You will need to add this overlay as a browser source in OBS Studio.
 
 <Steps>
-  <Step title="Blank Slate">
-    <p>Use the steps above, starting with the <TutorialText>Blank Slate</TutorialText>.</p>
+  <Step title="Copy url">
+    In the top right, click the <TutorialText>Copy overlay url</TutorialText> button.
   </Step>
-  <Step title="Add one element">
-    <p>Add **one** overlay element, such as the <TutorialText>Alert Box</TutorialText> or <TutorialText>Event List</TutorialText></p>
+  <Step title="Add a browser source">
+    In OBS Studio, find the <TutorialText>Sources</TutorialText> panel. Click the plus button and choose <TutorialText>Browser</TutorialText>. Name it something memorable, like <ExampleText>PWF Donations</ExampleText>.
+
+    <Callout variant="tip">
+      Consider copying your <TutorialText>Scene Collection</TutorialText> in the top menu. Choose <TutorialText>Duplicate...</TutorialText> and give it a name like <ExampleText>Pride With Friends <CurrentYear /></ExampleText>. This will make it easy to revert to your normal setup after <PrideGradient>Pride With Friends</PrideGradient> ends.
+    </Callout>
+
   </Step>
-  <Step title="Edit">
-    <p>Edit it to your needs</p>
+  <Step title="Configure source">
+    Set the <TutorialText>URL</TutorialText> to the overlay url you copied in step 1 above.
   </Step>
-  <Step title="Add to OBS">
-    <p>Save it, copy the overlay url, and add it as a browser source to OBS</p>
+  <Step title="Width & height">
+    Ensure <TutorialText>Width</TutorialText> is `1920` and <TutorialText>Height</TutorialText> is `1080`.
   </Step>
-  <Step title="Repeat">
-    <p>Repeat for **each** overlay element</p>
-  </Step>
-  <Step title="Control individually">
-    <p>Now you can control each element of the overlay individually in OBS</p>
+  <Step title="Confirm">
+    Click the <TutorialText>OK</TutorialText> button to finish.
   </Step>
 </Steps>
+
+<Callout variant="info">
+  You new overlay may be the wrong size for your stream. To fix this, right click it in the <TutorialText>Sources</TutorialText> panel, hover <TutorialText>Transform</TutorialText> and then click <TutorialText>Fit to screen</TutorialText>. You may also click the source to select it, then press `Ctrl+f` to do the same thing.
+</Callout>
+
+Your overlay is now ready to use! It will be working right away, so the next time you go live be vigilant for incoming donations. Don't forget to thank everyone who contributes and read any donation message to let them know you're listening.
+
+<Callout variant="danger">
+  Exercise caution when reading donation messages! Try to make sure it doesn't say anything suspicious or anti-queer before repeating it on your stream. Trolls are rare, but it's important to remain vigilant.
+</Callout>
