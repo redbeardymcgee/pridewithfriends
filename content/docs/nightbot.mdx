@@ -4,32 +4,64 @@ title: Nightbot
 
 ## Nightbot
 
-A <TutorialText>Timer</TutorialText> message to promote the event during the week:
+[Nightbot](https://docs.nightbot.tv/) is an extremely popular free chatbot for multiple platforms. Get started by logging into your [Nightbot Dashboard](https://nightbot.tv/dashboard).
 
-<ExampleText>Join us from June 27-29 for #PrideWithFriends 2025, a coop themed community fundraiser supporting the Trevor Project!</ExampleText>
+### Commands
 
 <Steps>
-  <Step title="Login">
-    <p>Login to your Nightbot Dashboard</p>
+  <Step>
+    On the left sidebar, click <TutorialText>Commands</TutorialText>.
   </Step>
-  <Step title="Timers">
-    <p>On the left sidebar, click <TutorialText>Timers</TutorialText></p>
+  <Step>
+    Click <TutorialText>New Command</TutorialText> in the top right corner.
   </Step>
-  <Step title="Add">
-    <p>Click <TutorialText>+ Add</TutorialText></p>
+  <Step>
+    Name the command.
+
+    <Callout variant="warning">
+      Use a memorable name, and don't forget to include the command trigger prefix!
+    </Callout>
+
   </Step>
-  <Step title="Name">
-    <p>Name the command (`pwf-timer`, for example)</p>
+  <Step>
+    In <TutorialText>Response</TutorialText>, paste a command message from [Chatbot commands](/docs/chatbot-commands). Feel free to customize it for your community, or create your own.
   </Step>
-  <Step title="Paste message">
-    <p>Paste the above message, and edit to your needs</p>
-  </Step>
-  <Step title="Set interval">
-    <p>Set the interval to a value that suits your stream's chat activity without spamming the chatbox (usually about 15 minutes is fine)</p>
-  </Step>
-  <Step title="Chat lines">
-    <p>Turn the chat lines down to zero</p>
+  <Step>
+    Leave the <TutorialText>Required User-Level</TutorialText> on the default setting, <TutorialText>Everyone</TutorialText>.
   </Step>
 </Steps>
 
-For commands that chat can trigger on demand, follow the same instructions as above but click on <TutorialText>Commands</TutorialText> instead of <TutorialText>Timers</TutorialText> and proceed as usual.
+Repeat these steps for any extra commands you'd like to add. Consider including them in your stream titles during the event to make viewers aware!
+
+### Timers
+
+<Steps>
+  <Step>
+    On the left sidebar, click <TutorialText>Timers</TutorialText>.
+  </Step>
+  <Step>
+    Click <TutorialText>New Timer</TutorialText> in the top right corner.
+  </Step>
+  <Step>
+    Name the timer.
+
+    <Callout variant="info">
+      The name of this timer is not strictly important. It will be triggered automatically according to the interval defined below the message.
+    </Callout>
+
+  </Step>
+  <Step>
+    In <TutorialText>Message</TutorialText> paste a timer message from [Chatbot commands](/docs/chatbot-commands). Feel free to customize it for your community, or create your own.
+  </Step>
+  <Step>
+    Set the <TutorialText>Interval</TutorialText> to a value that suits your stream's chat activity.
+
+    <Callout variant="tip">
+       The default 5 minutes will probably be too frequent. Try starting with a 15 minute interval; this can always be readjusted later.
+    </Callout>
+
+  </Step>
+</Steps>
+
+This is enough to make Nightbot remind chatters about the charity and event. You may also disable the timer unless a certain number of chat lines have been sent since the previous trigger, or alias the timer to an existing command to reuse the same message. These options may be found by clicking the <TutorialText>Show Advanced Settings</TutorialText> button.
+
