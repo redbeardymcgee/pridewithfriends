@@ -35,18 +35,18 @@ function App() {
           judgment-free and inclusive.
         </p>
         <div className="flex flex-wrap gap-3">
-          <a
+          <Link
             className="rounded-full border border-[rgba(50,143,151,0.3)] bg-[rgba(79,184,178,0.14)] px-5 py-2.5 font-semibold text-(--lagoon-deep) text-sm no-underline transition hover:-translate-y-0.5 hover:bg-[rgba(79,184,178,0.24)]"
-            href="/about"
+            to="/about"
           >
             About This Event
-          </a>
-          <a
+          </Link>
+          <Link
             className="rounded-full border border-[rgba(23,58,64,0.2)] bg-white/50 px-5 py-2.5 font-semibold text-(--sea-ink) text-sm no-underline transition hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]"
-            href="/docs/setup"
+            to="/docs/setup"
           >
             Streamer Setup
-          </a>
+          </Link>
         </div>
       </section>
 
