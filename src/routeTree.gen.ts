@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as StreamersRouteImport } from './routes/streamers'
+import { Route as ScheduleRouteImport } from './routes/schedule'
 import { Route as OrganizersRouteImport } from './routes/organizers'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as DocsRouteRouteImport } from './routes/docs/route'
@@ -19,6 +20,11 @@ import { Route as DocsSplatRouteImport } from './routes/docs/$'
 const StreamersRoute = StreamersRouteImport.update({
   id: '/streamers',
   path: '/streamers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ScheduleRoute = ScheduleRouteImport.update({
+  id: '/schedule',
+  path: '/schedule',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OrganizersRoute = OrganizersRouteImport.update({
@@ -52,6 +58,7 @@ export interface FileRoutesByFullPath {
   '/docs': typeof DocsRouteRouteWithChildren
   '/about': typeof AboutRoute
   '/organizers': typeof OrganizersRoute
+  '/schedule': typeof ScheduleRoute
   '/streamers': typeof StreamersRoute
   '/docs/$': typeof DocsSplatRoute
 }
@@ -60,6 +67,7 @@ export interface FileRoutesByTo {
   '/docs': typeof DocsRouteRouteWithChildren
   '/about': typeof AboutRoute
   '/organizers': typeof OrganizersRoute
+  '/schedule': typeof ScheduleRoute
   '/streamers': typeof StreamersRoute
   '/docs/$': typeof DocsSplatRoute
 }
@@ -69,20 +77,36 @@ export interface FileRoutesById {
   '/docs': typeof DocsRouteRouteWithChildren
   '/about': typeof AboutRoute
   '/organizers': typeof OrganizersRoute
+  '/schedule': typeof ScheduleRoute
   '/streamers': typeof StreamersRoute
   '/docs/$': typeof DocsSplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/docs' | '/about' | '/organizers' | '/streamers' | '/docs/$'
+  fullPaths:
+    | '/'
+    | '/docs'
+    | '/about'
+    | '/organizers'
+    | '/schedule'
+    | '/streamers'
+    | '/docs/$'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/docs' | '/about' | '/organizers' | '/streamers' | '/docs/$'
+  to:
+    | '/'
+    | '/docs'
+    | '/about'
+    | '/organizers'
+    | '/schedule'
+    | '/streamers'
+    | '/docs/$'
   id:
     | '__root__'
     | '/'
     | '/docs'
     | '/about'
     | '/organizers'
+    | '/schedule'
     | '/streamers'
     | '/docs/$'
   fileRoutesById: FileRoutesById
@@ -92,6 +116,7 @@ export interface RootRouteChildren {
   DocsRouteRoute: typeof DocsRouteRouteWithChildren
   AboutRoute: typeof AboutRoute
   OrganizersRoute: typeof OrganizersRoute
+  ScheduleRoute: typeof ScheduleRoute
   StreamersRoute: typeof StreamersRoute
 }
 
@@ -102,6 +127,13 @@ declare module '@tanstack/react-router' {
       path: '/streamers'
       fullPath: '/streamers'
       preLoaderRoute: typeof StreamersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/schedule': {
+      id: '/schedule'
+      path: '/schedule'
+      fullPath: '/schedule'
+      preLoaderRoute: typeof ScheduleRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/organizers': {
@@ -159,6 +191,7 @@ const rootRouteChildren: RootRouteChildren = {
   DocsRouteRoute: DocsRouteRouteWithChildren,
   AboutRoute: AboutRoute,
   OrganizersRoute: OrganizersRoute,
+  ScheduleRoute: ScheduleRoute,
   StreamersRoute: StreamersRoute,
 }
 export const routeTree = rootRouteImport

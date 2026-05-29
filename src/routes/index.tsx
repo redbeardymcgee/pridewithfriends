@@ -3,6 +3,21 @@ import { PrideGradient } from "#/components/typography"
 
 export const Route = createFileRoute("/")({ component: App })
 
+const cards = [
+  {
+    desc: "Meet the amazing gamers participating in Pride With Friends.",
+    link: <Link to="/streamers">Streamers</Link>,
+  },
+  {
+    desc: "Find your favorite events during Pride With Friends.",
+    link: <Link to="/schedule">Schedule</Link>,
+  },
+  {
+    desc: "Donate to Mermaids!",
+    link: <a href="https://tilt.fyi/QQVX9qSLnw">Support</a>,
+  },
+]
+
 function App() {
   return (
     <main className="page-wrap px-4 pt-14 pb-8">
@@ -36,24 +51,14 @@ function App() {
       </section>
 
       <section className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {[
-          [
-            "Streamers",
-            "Meet the amazing gamers participating in Pride With Friends.",
-          ],
-          ["Schedule", "Find your favorite events during Pride With Friends."],
-          // ["Lobbies", "Discover upcoming coop lobbies that you can join!"],
-          ["Support", "Donate to <charity>!"],
-        ].map(([title, desc], index) => (
+        {cards.map(({ desc, link }, index) => (
           <article
             className="island-shell feature-card rise-in rounded-2xl p-5"
-            key={title}
+            key={desc}
             style={{ animationDelay: `${index * 90 + 80}ms` }}
           >
             <h2 className="mb-2 font-semibold text-(--sea-ink) text-base">
-              <Link className="" to={title.toLowerCase()}>
-                {title}
-              </Link>
+              {link}
             </h2>
             <p className="m-0 text-(--sea-ink-soft) text-sm">{desc}</p>
           </article>
