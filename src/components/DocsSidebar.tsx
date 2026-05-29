@@ -54,11 +54,11 @@ export function DocsSidebar({
   return (
     <Sidebar {...props} className={cn("fixed top-16 h-svh", className)}>
       <SidebarContent className="pl-3">
-        {groups.map((group) => (
-          <SidebarGroup key={group.label}>
-            <SidebarGroupLabel>{group.label}</SidebarGroupLabel>
-            {group.items.map((item) => (
-              <SidebarMenuItem className="list-none" key={item.label}>
+        {groups.map(({ items, label }) => (
+          <SidebarGroup key={label}>
+            <SidebarGroupLabel>{label}</SidebarGroupLabel>
+            {items.map(({ label, to }) => (
+              <SidebarMenuItem className="list-none" key={label}>
                 <SidebarMenuButton asChild>
                   <Link
                     activeProps={{
@@ -66,9 +66,9 @@ export function DocsSidebar({
                     }}
                     // HACK: This `!important` feels wrong but I don't want the sidebar items to be styled like links
                     className="text-current!"
-                    to={item.to}
+                    to={to}
                   >
-                    {item.label}
+                    {label}
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
