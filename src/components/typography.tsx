@@ -57,5 +57,9 @@ export function WarningText({ children, className }: TextProps) {
 }
 
 export function PrideGradient({ children, className }: TextProps) {
-  return <span className={cn("pride-gradient", className)}>{children}</span>
+  return (
+    <span className={cn("pride-gradient text-shadow-none", className)}>
+      {children}
+    </span>
+  )
 }
