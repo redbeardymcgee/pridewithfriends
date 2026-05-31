@@ -45,6 +45,10 @@ const groups = [
     ],
     label: "Donations",
   },
+  {
+    items: [{ label: "Challenge runs", to: "/docs/challenge-runs" }],
+    label: "Challenges",
+  },
 ]
 
 export function DocsSidebar({
