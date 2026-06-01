@@ -7,6 +7,7 @@ import {
   SidebarGroupLabel,
   SidebarMenuButton,
   SidebarMenuItem,
+  useSidebar,
 } from "#/components/ui/sidebar"
 import { cn } from "#/lib/utils"
 
@@ -52,8 +53,12 @@ export function DocsSidebar({
   className,
   ...props
 }: ComponentProps<typeof Sidebar>) {
+  const { isMobile, setOpenMobile } = useSidebar()
   return (
-    <Sidebar {...props} className={cn("fixed top-16 h-svh", className)}>
+    <Sidebar
+      {...props}
+      className={cn("top-16 h-[calc(100svh-4rem)]", className)}
+    >
       <div className="mt-5">
         <SidebarContent className="pl-3">
           {groups.map(({ items, label }) => (
@@ -61,12 +66,16 @@ export function DocsSidebar({
               <SidebarGroupLabel>{label}</SidebarGroupLabel>
               {items.map(({ label, splat }) => (
                 <SidebarMenuItem className="list-none" key={label}>
-                  <SidebarMenuButton asChild>
+                  <SidebarMenuButton
+                    asChild
+                    onClick={() => {
+                      isMobile && setOpenMobile(false)
+                    }}
+                  >
                     <Link
                       activeProps={{
                         className: "font-bold",
                       }}
-                      // HACK: This `!important` feels wrong but I don't want the sidebar items to be styled like links
                       className="text-current!"
                       params={{ _splat: splat }}
                       to="/docs/$"
