@@ -12,41 +12,38 @@ import { cn } from "#/lib/utils"
 
 const groups = [
   {
-    items: [{ label: "Home", to: "/docs/setup" }],
+    items: [{ label: "Home", splat: "setup" }],
     label: "Menu",
   },
   {
     items: [
-      { label: "Join the team", to: "/docs/join-the-team" },
-      {
-        label: "Campaign setup",
-        to: "/docs/campaign-setup",
-      },
+      { label: "Join the team", splat: "join-the-team" },
+      { label: "Campaign setup", splat: "campaign-setup" },
     ],
     label: "Campaign",
   },
   {
-    items: [{ label: "Donation tracker", to: "/docs/overlay-setup" }],
+    items: [{ label: "Donation tracker", splat: "overlay-setup" }],
     label: "Overlay",
   },
   {
     items: [
-      { label: "Chatbot commands", to: "/docs/chatbot-commands" },
-      { label: "StreamElements", to: "/docs/streamelements" },
-      { label: "Nightbot", to: "/docs/nightbot" },
-      { label: "Streamlabs", to: "/docs/streamlabs" },
+      { label: "Chatbot commands", splat: "chatbot-commands" },
+      { label: "StreamElements", splat: "streamelements" },
+      { label: "Nightbot", splat: "nightbot" },
+      { label: "Streamlabs", splat: "streamlabs" },
     ],
     label: "Bot",
   },
   {
     items: [
-      { label: "Links", to: "/docs/link-setup" },
-      { label: "Panels", to: "/docs/panel-setup" },
+      { label: "Links", splat: "link-setup" },
+      { label: "Panels", splat: "panel-setup" },
     ],
     label: "Donations",
   },
   {
-    items: [{ label: "Challenge runs", to: "/docs/challenge-runs" }],
+    items: [{ label: "Challenge runs", splat: "challenge-runs" }],
     label: "Challenges",
   },
 ]
@@ -57,29 +54,32 @@ export function DocsSidebar({
 }: ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar {...props} className={cn("fixed top-16 h-svh", className)}>
-      <SidebarContent className="pl-3">
-        {groups.map(({ items, label }) => (
-          <SidebarGroup key={label}>
-            <SidebarGroupLabel>{label}</SidebarGroupLabel>
-            {items.map(({ label, to }) => (
-              <SidebarMenuItem className="list-none" key={label}>
-                <SidebarMenuButton asChild>
-                  <Link
-                    activeProps={{
-                      className: "font-bold",
-                    }}
-                    // HACK: This `!important` feels wrong but I don't want the sidebar items to be styled like links
-                    className="text-current!"
-                    to={to}
-                  >
-                    {label}
-                  </Link>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            ))}
-          </SidebarGroup>
-        ))}
-      </SidebarContent>
+      <div className="mt-5">
+        <SidebarContent className="pl-3">
+          {groups.map(({ items, label }) => (
+            <SidebarGroup key={label}>
+              <SidebarGroupLabel>{label}</SidebarGroupLabel>
+              {items.map(({ label, splat }) => (
+                <SidebarMenuItem className="list-none" key={label}>
+                  <SidebarMenuButton asChild>
+                    <Link
+                      activeProps={{
+                        className: "font-bold",
+                      }}
+                      // HACK: This `!important` feels wrong but I don't want the sidebar items to be styled like links
+                      className="text-current!"
+                      params={{ _splat: splat }}
+                      to="/docs/$"
+                    >
+                      {label}
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarGroup>
+          ))}
+        </SidebarContent>
+      </div>
     </Sidebar>
   )
 }
