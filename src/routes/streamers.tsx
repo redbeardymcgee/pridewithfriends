@@ -1,10 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router"
 import { createServerFn } from "@tanstack/react-start"
-import { ApiClient } from "@twurple/api"
-import { AppTokenAuthProvider } from "@twurple/auth"
 import { PrideGradient } from "#/components/typography"
 import { Avatar, AvatarFallback, AvatarImage } from "#/components/ui/avatar"
 import { Card, CardContent, CardHeader, CardTitle } from "#/components/ui/card"
+import { getTwitchUsersByNames } from "#/lib/twitch"
 import TwitchLogo from "@/assets/icons/glitch_flat_purple.svg?react"
 
 const streamers = [
@@ -37,18 +36,7 @@ const streamers = [
 ]
 
 const getStreamers = createServerFn().handler(async () => {
-  const clientId = process.env.TWITCH_CLIENT_ID
-  const clientSecret = process.env.TWITCH_CLIENT_SECRET
-
-  if (!clientId || !clientSecret) {
-    throw new Error(
-      "Missing Twitch API credentials. Check the .env, .env.development, .env.local and .env.production files.",
-    )
-  }
-
-  const authProvider = new AppTokenAuthProvider(clientId, clientSecret)
-  const apiClient = new ApiClient({ authProvider })
-  const users = await apiClient.users.getUsersByNames(streamers)
+  const users = await getTwitchUsersByNames(streamers)
 
   if (!users) {
     throw new Error("No users found.")
