@@ -19,6 +19,7 @@ interface ChallengeSubmission {
   rank: number
   name: string
   time: string
+  score: number
   clipUrl?: string
 }
 
@@ -28,9 +29,15 @@ const challengeRuns: ChallengeRun[] = [
     id: 1,
     name: "Pride's Bane",
     submissions: [
-      { clipUrl: "#", name: "TBD", rank: 1, time: "TBD" },
-      { clipUrl: "#", name: "TBD", rank: 2, time: "TBD" },
-      { clipUrl: "#", name: "TBD", rank: 3, time: "TBD" },
+      {
+        clipUrl: "https://www.twitch.tv/videos/2787031472?t=00h56m10s",
+        name: "kaosmark2",
+        rank: 1,
+        score: 3452,
+        time: "56:42",
+      },
+      { clipUrl: "#", name: "TBD", rank: 2, score: 0, time: "TBD" },
+      { clipUrl: "#", name: "TBD", rank: 3, score: 0, time: "TBD" },
     ],
   },
   {
@@ -38,9 +45,9 @@ const challengeRuns: ChallengeRun[] = [
     id: 2,
     name: "Get Glamourous",
     submissions: [
-      { clipUrl: "#", name: "TBD", rank: 1, time: "TBD" },
-      { clipUrl: "#", name: "TBD", rank: 2, time: "TBD" },
-      { clipUrl: "#", name: "TBD", rank: 3, time: "TBD" },
+      { clipUrl: "#", name: "TBD", rank: 1, score: 0, time: "TBD" },
+      { clipUrl: "#", name: "TBD", rank: 2, score: 0, time: "TBD" },
+      { clipUrl: "#", name: "TBD", rank: 3, score: 0, time: "TBD" },
     ],
   },
   {
@@ -48,9 +55,9 @@ const challengeRuns: ChallengeRun[] = [
     id: 3,
     name: "Luxury Gay Space",
     submissions: [
-      { clipUrl: "#", name: "TBD", rank: 1, time: "TBD" },
-      { clipUrl: "#", name: "TBD", rank: 2, time: "TBD" },
-      { clipUrl: "#", name: "TBD", rank: 3, time: "TBD" },
+      { clipUrl: "#", name: "TBD", rank: 1, score: 0, time: "TBD" },
+      { clipUrl: "#", name: "TBD", rank: 2, score: 0, time: "TBD" },
+      { clipUrl: "#", name: "TBD", rank: 3, score: 0, time: "TBD" },
     ],
   },
   {
@@ -58,9 +65,9 @@ const challengeRuns: ChallengeRun[] = [
     id: 4,
     name: "Constellation Partners",
     submissions: [
-      { clipUrl: "#", name: "TBD", rank: 1, time: "TBD" },
-      { clipUrl: "#", name: "TBD", rank: 2, time: "TBD" },
-      { clipUrl: "#", name: "TBD", rank: 3, time: "TBD" },
+      { clipUrl: "#", name: "TBD", rank: 1, score: 0, time: "TBD" },
+      { clipUrl: "#", name: "TBD", rank: 2, score: 0, time: "TBD" },
+      { clipUrl: "#", name: "TBD", rank: 3, score: 0, time: "TBD" },
     ],
   },
 ]
@@ -87,7 +94,7 @@ function ChallengeRunCard({ challenge }: { challenge: ChallengeRun }) {
               key={sub.rank}
             >
               <div className="flex items-center gap-3">
-                <span className="font-medium text-muted-foreground text-sm tabular-nums">
+                <span className="border-r px-1 font-medium text-muted-foreground text-sm tabular-nums">
                   #{sub.rank}
                 </span>
                 <span className="font-medium text-foreground text-sm">
@@ -95,8 +102,11 @@ function ChallengeRunCard({ challenge }: { challenge: ChallengeRun }) {
                 </span>
               </div>
               <div className="flex items-center gap-3">
-                <span className="text-muted-foreground text-sm tabular-nums">
+                <span className="border-r px-1 text-muted-foreground text-sm tabular-nums">
                   {sub.time}
+                </span>
+                <span className="text-muted-foreground text-sm tabular-nums">
+                  {sub.score}
                 </span>
                 {sub.clipUrl && (
                   <a
