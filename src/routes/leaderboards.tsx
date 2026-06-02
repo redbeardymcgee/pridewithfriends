@@ -54,7 +54,7 @@ const challengeRuns: ChallengeRun[] = [
     ],
   },
   {
-    description: "Ranked by score",
+    description: "Ranked by time",
     id: 4,
     name: "Constellation Partners",
     submissions: [
