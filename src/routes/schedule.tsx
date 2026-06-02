@@ -88,6 +88,19 @@ const events: Event[] = [
       { name: "TBA 4" },
     ],
   },
+  {
+    date: "TBA",
+    description:
+      "Discussion panel featuring queer community members regarding issues facing queer people.",
+    id: 4,
+    name: "Queer Discussion Panel",
+    participants: [
+      { name: "TBA 1" },
+      { name: "TBA 2" },
+      { name: "TBA 3" },
+      { name: "TBA 4" },
+    ],
+  },
 ]
 
 function ParticipantAvatars({ participants }: { participants: Participant[] }) {
