@@ -87,10 +87,10 @@ export const Route = createFileRoute("/organizers")({
 function OrganizerCards() {
   const organizers = Route.useLoaderData()
   return (
-    <div className="mt-4 grid grid-flow-col grid-rows-2 place-content-evenly gap-4">
+    <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
       {organizers.map(({ avatar, bio, name, pronouns, twitch, youtube }) => {
         return (
-          <Card className="w-sm bg-slate-700" key={name}>
+          <Card className="bg-slate-700" key={name}>
             {/* FIXME: `flex flex-row` is probably more correct, but messes up the youtube image */}
             <CardHeader className="grid grid-flow-col grid-rows-1">
               {/* <CardHeader className="flex flex-row"> */}
