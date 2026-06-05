@@ -105,7 +105,7 @@ export function DocsSidebar({
           {groups.map(({ items, label }) => (
             <SidebarGroup key={label}>
               <SidebarGroupLabel>{label}</SidebarGroupLabel>
-              {items.map(({ icon: IconComponent, label, splat }) => (
+              {items.map(({ icon: Icon, label, splat }) => (
                 <SidebarMenuItem className="list-none" key={label}>
                   <SidebarMenuButton
                     asChild
@@ -117,11 +117,11 @@ export function DocsSidebar({
                       activeProps={{
                         className: "font-bold",
                       }}
-                      className="px-4 text-slate-300!"
+                      className="px-4 text-lg! text-slate-300!"
                       params={{ _splat: splat }}
                       to="/docs/$"
                     >
-                      <IconComponent className="inline-block" />
+                      <Icon className="inline-block" />
                       {label}
                     </Link>
                   </SidebarMenuButton>
