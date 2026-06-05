@@ -28,6 +28,10 @@ const groups = [
     label: "Overlay",
   },
   {
+    items: [{ label: "Emotes", splat: "emotes" }],
+    label: "Emotes",
+  },
+  {
     items: [
       { label: "Chatbot commands", splat: "chatbot-commands" },
       { label: "StreamElements", splat: "streamelements" },
@@ -76,7 +80,7 @@ export function DocsSidebar({
                       activeProps={{
                         className: "font-bold",
                       }}
-                      className="text-current!"
+                      className="px-4 text-slate-300!"
                       params={{ _splat: splat }}
                       to="/docs/$"
                     >

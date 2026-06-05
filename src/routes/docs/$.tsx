@@ -2,6 +2,7 @@ import { MDXContent } from "@content-collections/mdx/react"
 import { mdxComponents } from "@prose-ui/react"
 import { createFileRoute, notFound } from "@tanstack/react-router"
 import { allDocs } from "content-collections"
+import { Folder, Plus } from "lucide-react"
 import {
   ExampleText,
   PrideGradient,
@@ -14,6 +15,8 @@ const components = {
   ...mdxComponents,
   CurrentYear,
   ExampleText,
+  Folder,
+  Plus,
   PrideGradient,
   TutorialText,
   WarningText,
