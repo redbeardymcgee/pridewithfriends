@@ -1,4 +1,16 @@
 import { Link } from "@tanstack/react-router"
+import {
+  Bot,
+  Flag,
+  HeartHandshake,
+  Home,
+  LayoutGrid,
+  Link as LinkIcon,
+  Smile,
+  TerminalSquare,
+  Trophy,
+  UserRoundPlus,
+} from "lucide-react"
 import type { ComponentProps } from "react"
 import {
   Sidebar,
@@ -11,44 +23,69 @@ import {
 } from "#/components/ui/sidebar"
 import { cn } from "#/lib/utils"
 
-const groups = [
+interface SidebarItem {
+  label: string
+  splat: string
+  icon: React.ElementType
+}
+
+interface SidebarGroupType {
+  label: string
+  items: SidebarItem[]
+}
+
+const groups: SidebarGroupType[] = [
   {
-    items: [{ label: "Home", splat: "setup" }],
+    items: [{ icon: Home, label: "Home", splat: "setup" }],
     label: "Menu",
   },
   {
     items: [
-      { label: "Join the team", splat: "join-the-team" },
-      { label: "Campaign setup", splat: "campaign-setup" },
+      {
+        icon: UserRoundPlus,
+        label: "Join the team",
+        splat: "join-the-team",
+      },
+      { icon: Flag, label: "Campaign setup", splat: "campaign-setup" },
     ],
     label: "Campaign",
   },
   {
-    items: [{ label: "Donation tracker", splat: "overlay-setup" }],
+    items: [
+      {
+        icon: HeartHandshake,
+        label: "Donation tracker",
+        splat: "overlay-setup",
+      },
+    ],
     label: "Overlay",
   },
   {
-    items: [{ label: "Emotes", splat: "emotes" }],
+    items: [{ icon: Smile, label: "Emotes", splat: "emotes" }],
     label: "Emotes",
   },
   {
     items: [
-      { label: "Chatbot commands", splat: "chatbot-commands" },
-      { label: "StreamElements", splat: "streamelements" },
-      { label: "Nightbot", splat: "nightbot" },
-      { label: "Streamlabs", splat: "streamlabs" },
+      {
+        icon: TerminalSquare,
+        label: "Chatbot commands",
+        splat: "chatbot-commands",
+      },
+      { icon: Bot, label: "StreamElements", splat: "streamelements" },
+      { icon: Bot, label: "Nightbot", splat: "nightbot" },
+      { icon: Bot, label: "Streamlabs", splat: "streamlabs" },
     ],
     label: "Bot",
   },
   {
     items: [
-      { label: "Links", splat: "link-setup" },
-      { label: "Panels", splat: "panel-setup" },
+      { icon: LinkIcon, label: "Links", splat: "link-setup" },
+      { icon: LayoutGrid, label: "Panels", splat: "panel-setup" },
     ],
     label: "Donations",
   },
   {
-    items: [{ label: "Challenge runs", splat: "challenge-runs" }],
+    items: [{ icon: Trophy, label: "Challenge runs", splat: "challenge-runs" }],
     label: "Challenges",
   },
 ]
@@ -68,7 +105,7 @@ export function DocsSidebar({
           {groups.map(({ items, label }) => (
             <SidebarGroup key={label}>
               <SidebarGroupLabel>{label}</SidebarGroupLabel>
-              {items.map(({ label, splat }) => (
+              {items.map(({ icon: IconComponent, label, splat }) => (
                 <SidebarMenuItem className="list-none" key={label}>
                   <SidebarMenuButton
                     asChild
@@ -84,6 +121,7 @@ export function DocsSidebar({
                       params={{ _splat: splat }}
                       to="/docs/$"
                     >
+                      <IconComponent className="inline-block" />
                       {label}
                     </Link>
                   </SidebarMenuButton>

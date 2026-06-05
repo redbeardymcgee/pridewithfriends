@@ -9,7 +9,7 @@ export const Route = createFileRoute("/docs")({
 function DocsLayout() {
   return (
     <SidebarProvider>
-      <DocsSidebar />
+      <DocsSidebar collapsible="icon" />
       <SidebarTrigger className="fixed top-16 left-2 z-60" />
       <Outlet />
     </SidebarProvider>
