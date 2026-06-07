@@ -117,7 +117,7 @@ export function DocsSidebar({
                       activeProps={{
                         className: "font-bold",
                       }}
-                      className="px-4 text-slate-300!"
+                      className="text-slate-300!"
                       params={{ _splat: splat }}
                       to="/docs/$"
                     >
