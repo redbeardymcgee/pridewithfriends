@@ -10,7 +10,8 @@ function DocsLayout() {
   return (
     <SidebarProvider>
       <DocsSidebar collapsible="icon" />
-      <SidebarTrigger className="fixed top-16 left-2 z-60" />
+      {/* HACK: This is manually positioned inside the header. It works fine, but it's fragile. */}
+      <SidebarTrigger className="fixed inset-s-2 top-8 z-60 -translate-y-1/2" />
       <Outlet />
     </SidebarProvider>
   )
