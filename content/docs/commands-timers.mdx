@@ -1,0 +1,263 @@
+---
+title: Commands & Timers
+---
+
+## Chatbot setup
+
+Inviting donations and participation in a charity event from your viewers can be daunting. Here are some commands and timers you may add to your chatbot to help communicate what the event is about and how viewers may engage.
+
+Start by logging into the dashboard interface for your bot.
+
+- [Nightbot](https://nightbot.tv/dashboard)
+- [Streamlabs](https://streamlabs.com/dashboard)
+- [StreamElements](https://streamelements.com/dashboard)
+
+<Callout variant="info">
+  Do you use a different bot? Message <TutorialText>@redbeardymcgee</TutorialText> on Discord for help, and we will add instructions for your bot here too!
+</Callout>
+
+### Commands
+
+Chat commands must be triggered by typing the name. Most are named with a prefixed with an exclamation point like <ExampleText>!helloworld</ExampleText>, but many bots support commands triggered by any or no prefix at all. These are helpful for answering common questions about the event, such as where to donate or learn more about the charity.
+
+#### Examples
+
+<Tabs>
+  <Tab value="Charity">
+    <ExampleText>!mermaids</ExampleText>
+
+    Mermaids supports transgender, non-binary and gender-diverse children and young people. Their work reduces isolation and loneliness, helps negotiate education and health services, helps young people to cope better with mental and emotional distress, improves the self-esteem and social skills of children and young people, and improves awareness, understanding and practices of teachers, GP’s, CAMHS, Social Services and other professionals.
+
+  </Tab>
+  <Tab value="Donations">
+    <ExampleText>!donate</ExampleText>
+
+    Support Mermaids during <PrideGradient>Pride With Friends</PrideGradient> with a donation through Tiltify! <span className="text-shadow-none">[insert your donation link](/docs/link-setup)</span>
+
+  </Tab>
+  <Tab value="Organizers">
+    <ExampleText>!organizers</ExampleText>
+
+    Meet the organizers of this year's Pride With Friends! [https://pwf.mcgee.red/organizers](https://pwf.mcgee.red/organizers)
+
+  </Tab>
+  <Tab value="Pride's Bane">
+    <ExampleText>!pridecurse</ExampleText>
+
+    Living life as a queer person means immediately having to spend an energy on dealing with such issues before you want to. If you try to avoid it, the problem just keeps getting worse. Good luck being apolitical!
+
+  </Tab>
+</Tabs>
+
+#### Configuration
+
+<Tabs>
+  <Tab value="Nightbot">
+    <Steps>
+      <Step>
+        On the left sidebar, click <TutorialText>Commands</TutorialText>.
+      </Step>
+      <Step>
+        Click <TutorialText>New Command</TutorialText> in the top right corner.
+      </Step>
+      <Step>
+        Name the command.
+
+        <Callout variant="warning">
+          Use a memorable name, and don't forget to include the command trigger prefix!
+        </Callout>
+
+      </Step>
+      <Step>
+        In <TutorialText>Response</TutorialText>, paste a command message from the Examples above. Feel free to customize it for your community, or create your own.
+      </Step>
+      <Step>
+        Leave the <TutorialText>Required User-Level</TutorialText> on the default setting, <TutorialText>Everyone</TutorialText>.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab value="StreamElements">
+    <Steps>
+      <Step>
+        On the left sidebar, click the <TutorialText>Chatbot</TutorialText> menu then <TutorialText>Chat commands</TutorialText>.
+      </Step>
+      <Step>
+        Click <TutorialText>Add New Command</TutorialText> in the top right corner.
+      </Step>
+      <Step>
+        Name the command.
+
+        <Callout variant="tip">
+          Use a memorable name, but do not include the prefix! StreamElements chatbot automatically prepends an exclamation point by default.
+        </Callout>
+
+      </Step>
+      <Step>
+        Leave the <TutorialText>Response type</TutorialText> and <TutorialText>User level</TutorialText> at the default settings.
+      </Step>
+      <Step>
+        In <TutorialText>Reply</TutorialText>, paste a command message from the Examples above. Feel free to customize it for your community, or create your own.
+      </Step>
+      <Step>
+        Click <TutorialText>Activate Command</TutorialText> in the bottom left.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab value="Streamlabs">
+    <Steps>
+      <Step>
+        On the left sidebar, click <TutorialText>Cloudbot</TutorialText>.
+      </Step>
+      <Step>
+        Click <TutorialText>Commands</TutorialText> in the tab bar located near the center.
+      </Step>
+      <Step>
+        Click <TutorialText>Add Command</TutorialText> in the top right corner.
+      </Step>
+      <Step>
+        Name the command.
+
+        <Callout variant="warning">
+          Use a memorable name, and don't forget to include the command trigger prefix!
+        </Callout>
+
+      </Step>
+      <Step>
+        In <TutorialText>Response</TutorialText>, paste a command message from the Examples above. Feel free to customize it for your community, or create your own.
+      </Step>
+      <Step>
+        Leave the <TutorialText>Reply in</TutorialText> and <TutorialText>Permission</TutorialText> at the default settings.
+      </Step>
+      <Step>
+        Click <TutorialText>Confirm</TutorialText> in the bottom left.
+      </Step>
+    </Steps>
+
+    <Callout variant="info">
+      There are many more options in the <TutorialText>Advanced</TutorialText> tab, but they shouldn't be necessary to modify.
+    </Callout>
+  </Tab>
+</Tabs>
+
+Repeat these steps for any extra commands you'd like to add. Consider including them in your stream titles during the event to make viewers aware!
+
+### Timers
+
+Timer commands are automatically triggered on a periodic interval, without requiring someone to type a command. These are useful to remind viewers about the event, the charity, and the meaning of Pride.
+
+#### Examples
+
+<Tabs>
+  <Tab value="Charity">
+    <PrideGradient>Pride With Friends</PrideGradient> is a charity drive occurring throughout <PrideGradient>Pride Month</PrideGradient>. This year we are supporting Mermaids, an organization that provides phone, email and web chat support, moderated online forums, events and groups for families and young people, training, and campaigning for the things that matter most to trans children and young people.
+  </Tab>
+  <Tab value="Schedule">
+    <PrideGradient>Pride With Friends</PrideGradient> events take place from June 22 through the end of the month. Join us for speedrun events, discussion panels, coop runs and more to support Mermaids and celebrate <PrideGradient>Pride</PrideGradient> across the world!.
+  </Tab>
+</Tabs>
+
+
+#### Configuration
+
+<Tabs>
+  <Tab value="Nightbot">
+    <Steps>
+      <Step>
+        On the left sidebar, click <TutorialText>Timers</TutorialText>.
+      </Step>
+      <Step>
+        Click <TutorialText>New Timer</TutorialText> in the top right corner.
+      </Step>
+      <Step>
+        Name the timer.
+
+        <Callout variant="info">
+          The name of this timer is not strictly important. It will be triggered automatically according to the interval defined below the message.
+        </Callout>
+
+      </Step>
+      <Step>
+        In <TutorialText>Message</TutorialText> paste a timer message from the Examples above. Feel free to customize it for your community, or create your own.
+      </Step>
+      <Step>
+        Set the <TutorialText>Interval</TutorialText> to a value that suits your stream's chat activity.
+
+        <Callout variant="tip">
+           The default 5 minutes will probably be too frequent. Try starting with a 15 minute interval; this can always be readjusted later.
+        </Callout>
+
+      </Step>
+    </Steps>
+
+    This is enough to make Nightbot remind chatters about the charity and event. You may also disable the timer unless a certain number of chat lines have been sent since the previous trigger, or alias the timer to an existing command to reuse the same message. These options may be found by clicking the <TutorialText>Show Advanced Settings</TutorialText> button.
+
+  </Tab>
+  <Tab value="StreamElements">
+    <Steps>
+      <Step>
+        On the left sidebar, click the <TutorialText>Chatbot</TutorialText> menu then <TutorialText>Timers</TutorialText>.
+      </Step>
+      <Step>
+        Click <TutorialText>Add New Timer</TutorialText> in the top right corner.
+      </Step>
+      <Step>
+        Name the timer.
+
+        <Callout variant="info">
+          The name of this timer is not strictly important. It will be triggered automatically according to the interval defined with the sliders to the right.
+        </Callout>
+
+      </Step>
+      <Step>
+        In <TutorialText>Response messages</TutorialText> paste a timer message from the Examples above. Feel free to customize it for your community, or create your own.
+      </Step>
+      <Step>
+        Set the <TutorialText>Online interval</TutorialText> to a value that suits your stream's chat activity.
+
+        <Callout variant="tip">
+           The default 5 minutes will probably be too frequent. Try starting with a 15 minute interval; this can always be readjusted later.
+        </Callout>
+
+      </Step>
+    </Steps>
+
+    This is enough to make StreamElements chatbot remind chatters about the charity and event. You may wish to uncheck the <TutorialText>Offline interval</TutorialText> or adjust the <TutorialText>Chat lines</TutorialText> but this is not necessary.
+
+  </Tab>
+  <Tab value="Streamlabs">
+    <Steps>
+      <Step>
+        On the left sidebar, click <TutorialText>Cloudbot</TutorialText>.
+      </Step>
+      <Step>
+        Click <TutorialText>Timers</TutorialText> in the tab bar located near the center.
+      </Step>
+      <Step>
+        Click <TutorialText>Add Timer</TutorialText> in the top right corner.
+      </Step>
+      <Step>
+        Name the timer.
+
+        <Callout variant="info">
+          The name of this timer is not strictly important. It will be triggered automatically according to the interval defined below.
+        </Callout>
+
+      </Step>
+      <Step>
+        In <TutorialText>Response</TutorialText> paste a timer message from the Examples above. Feel free to customize it for your community, or create your own.
+      </Step>
+      <Step>
+        Set the <TutorialText>Interval</TutorialText> to a value that suits your stream's chat activity.
+
+        <Callout variant="tip">
+           The default 5 minutes will probably be too frequent. Try starting with a 15 minute interval; this can always be readjusted later.
+        </Callout>
+
+      </Step>
+    </Steps>
+
+    This is enough to make Streamlabs Cloudbot remind chatters about the charity and event.
+
+  </Tab>
+</Tabs>
+

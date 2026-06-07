@@ -7,7 +7,6 @@ import {
   LayoutGrid,
   Link as LinkIcon,
   Smile,
-  TerminalSquare,
   Trophy,
   UserRoundPlus,
 } from "lucide-react"
@@ -67,13 +66,10 @@ const groups: SidebarGroupType[] = [
   {
     items: [
       {
-        icon: TerminalSquare,
-        label: "Chatbot commands",
-        splat: "chatbot-commands",
+        icon: Bot,
+        label: "Commands & timers",
+        splat: "commands-timers",
       },
-      { icon: Bot, label: "StreamElements", splat: "streamelements" },
-      { icon: Bot, label: "Nightbot", splat: "nightbot" },
-      { icon: Bot, label: "Streamlabs", splat: "streamlabs" },
     ],
     label: "Bot",
   },
