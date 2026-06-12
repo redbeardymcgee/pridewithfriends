@@ -1,5 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router"
-import { ExternalLink, Trophy } from "lucide-react"
+import {
+  createColumnHelper,
+  flexRender,
+  getCoreRowModel,
+  useReactTable,
+} from "@tanstack/react-table"
+import { ExternalLink, Medal, Trophy } from "lucide-react"
+import { useMemo } from "react"
 import {
   Card,
   CardContent,
@@ -7,120 +14,282 @@ import {
   CardHeader,
   CardTitle,
 } from "#/components/ui/card"
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "#/components/ui/table"
 
-interface ChallengeRun {
-  id: number
-  name: string
-  description: string
-  submissions: ChallengeSubmission[]
-}
+type RankingMetric = "score" | "percentage" | "gold" | "time"
 
 interface ChallengeSubmission {
   rank: number
-  name: string
-  time: string
-  score: number
+  player: string
   clipUrl?: string
+  score?: number
+  time?: string
+  percentage?: number
+  gold?: number
 }
 
+interface ChallengeRun {
+  id: number
+  label: string
+  description: string
+  rankingMetric: RankingMetric
+  seeded: ChallengeSubmission[]
+  unseeded: ChallengeSubmission[]
+}
+
+const METRIC_LABELS: Record<RankingMetric, string> = {
+  gold: "Gold",
+  percentage: "Glam %",
+  score: "Score",
+  time: "Time",
+}
+
+// TODO: Take submissions by form instead. Blocked on DB integration.
 const challengeRuns: ChallengeRun[] = [
   {
     description: "Ranked by score",
     id: 1,
-    name: "Pride's Bane",
-    submissions: [
+    label: "Pride's Bane",
+    rankingMetric: "score",
+    seeded: [
+      { player: "TBD", rank: 1, score: 0 },
+      { player: "TBD", rank: 2, score: 0 },
+      { player: "TBD", rank: 3, score: 0 },
+    ],
+    unseeded: [
       {
-        clipUrl: "https://www.twitch.tv/videos/2787031472?t=00h56m10s",
-        name: "kaosmark2",
+        clipUrl: "https://www.twitch.tv/videos/2793479113",
+        player: "kaosmark2",
         rank: 1,
-        score: 3452,
-        time: "56:42",
+        score: 3470,
       },
-      { clipUrl: "#", name: "TBD", rank: 2, score: 0, time: "TBD" },
-      { clipUrl: "#", name: "TBD", rank: 3, score: 0, time: "TBD" },
+      { player: "TBD", rank: 2, score: 0 },
+      { player: "TBD", rank: 3, score: 0 },
     ],
   },
   {
     description: "Ranked by percentage of deck enchanted with Glam",
     id: 2,
-    name: "Get Glamourous",
-    submissions: [
-      { clipUrl: "#", name: "TBD", rank: 1, score: 0, time: "TBD" },
-      { clipUrl: "#", name: "TBD", rank: 2, score: 0, time: "TBD" },
-      { clipUrl: "#", name: "TBD", rank: 3, score: 0, time: "TBD" },
+    label: "Get Glamourous",
+    rankingMetric: "percentage",
+    seeded: [
+      { percentage: 0, player: "TBD", rank: 1 },
+      { percentage: 0, player: "TBD", rank: 2 },
+      { percentage: 0, player: "TBD", rank: 3 },
+    ],
+    unseeded: [
+      { percentage: 0, player: "TBD", rank: 1 },
+      { percentage: 0, player: "TBD", rank: 2 },
+      { percentage: 0, player: "TBD", rank: 3 },
     ],
   },
   {
     description: "Ranked by remaining gold",
     id: 3,
-    name: "Luxury Gay Space",
-    submissions: [
-      { clipUrl: "#", name: "TBD", rank: 1, score: 0, time: "TBD" },
-      { clipUrl: "#", name: "TBD", rank: 2, score: 0, time: "TBD" },
-      { clipUrl: "#", name: "TBD", rank: 3, score: 0, time: "TBD" },
+    label: "Luxury Gay Space",
+    rankingMetric: "gold",
+    seeded: [
+      { gold: 0, player: "TBD", rank: 1 },
+      { gold: 0, player: "TBD", rank: 2 },
+      { gold: 0, player: "TBD", rank: 3 },
+    ],
+    unseeded: [
+      { gold: 0, player: "TBD", rank: 1 },
+      { gold: 0, player: "TBD", rank: 2 },
+      { gold: 0, player: "TBD", rank: 3 },
     ],
   },
   {
     description: "Ranked by time",
     id: 4,
-    name: "Constellation Partners",
-    submissions: [
-      { clipUrl: "#", name: "TBD", rank: 1, score: 0, time: "TBD" },
-      { clipUrl: "#", name: "TBD", rank: 2, score: 0, time: "TBD" },
-      { clipUrl: "#", name: "TBD", rank: 3, score: 0, time: "TBD" },
+    label: "Constellation Partners",
+    rankingMetric: "time",
+    seeded: [
+      { player: "TBD", rank: 1, time: "TBD" },
+      { player: "TBD", rank: 2, time: "TBD" },
+      { player: "TBD", rank: 3, time: "TBD" },
+    ],
+    unseeded: [
+      { player: "TBD", rank: 1, time: "TBD" },
+      { player: "TBD", rank: 2, time: "TBD" },
+      { player: "TBD", rank: 3, time: "TBD" },
     ],
   },
 ]
+
+function getRowClassName(rank: number) {
+  switch (rank) {
+    case 1:
+      return "bg-yellow-500/10 hover:bg-yellow-500/15"
+    case 2:
+      return "bg-gray-500/10 hover:bg-gray-500/15"
+    case 3:
+      return "bg-orange-500/10 hover:bg-orange-500/15"
+    default:
+      return ""
+  }
+}
+
+function RankCell({ rank }: { rank: number }) {
+  switch (rank) {
+    case 1:
+      return (
+        <span className="flex items-center gap-1 text-yellow-500">
+          <Medal className="size-3" />
+          <span>1</span>
+        </span>
+      )
+    case 2:
+      return (
+        <span className="flex items-center gap-1 text-gray-400">
+          <Medal className="size-3" />
+          <span>2</span>
+        </span>
+      )
+    case 3:
+      return (
+        <span className="flex items-center gap-1 text-orange-600">
+          <Medal className="size-3" />
+          <span>3</span>
+        </span>
+      )
+    default:
+      return <span>#{rank}</span>
+  }
+}
+
+const columnHelper = createColumnHelper<ChallengeSubmission>()
+
+function SubmissionTable({
+  challengeName,
+  rankingMetric,
+  submissions,
+}: {
+  challengeName: string
+  rankingMetric: RankingMetric
+  submissions: ChallengeSubmission[]
+}) {
+  const metricColumn = useMemo(
+    () =>
+      columnHelper.accessor(rankingMetric, {
+        header: METRIC_LABELS[rankingMetric],
+      }),
+    [rankingMetric],
+  )
+
+  const columns = useMemo(
+    () => [
+      columnHelper.accessor("rank", {
+        cell: (info) => <RankCell rank={info.getValue()} />,
+        header: "Rank",
+      }),
+      columnHelper.accessor("player", {
+        header: "Player",
+      }),
+      metricColumn,
+      columnHelper.display({
+        cell: (info) => {
+          const { player, rank, clipUrl } = info.row.original
+          if (!clipUrl) return null
+          return (
+            <a
+              aria-label={`Watch ${player}'s ${challengeName} clip for rank #${rank}`}
+              className="text-muted-foreground hover:text-foreground"
+              href={clipUrl}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <ExternalLink className="size-3" />
+            </a>
+          )
+        },
+        header: "Clip",
+        id: "clip",
+      }),
+    ],
+    [challengeName, metricColumn],
+  )
+
+  const table = useReactTable({
+    columns,
+    data: submissions,
+    getCoreRowModel: getCoreRowModel(),
+  })
+
+  return (
+    <Table>
+      <TableHeader>
+        {table.getHeaderGroups().map((headerGroup) => (
+          <TableRow key={headerGroup.id}>
+            {headerGroup.headers.map((header) => (
+              <TableHead key={header.id}>
+                {flexRender(
+                  header.column.columnDef.header,
+                  header.getContext(),
+                )}
+              </TableHead>
+            ))}
+          </TableRow>
+        ))}
+      </TableHeader>
+      <TableBody>
+        {table.getRowModel().rows.map((row) => (
+          <TableRow className={getRowClassName(row.original.rank)} key={row.id}>
+            {row.getVisibleCells().map((cell) => (
+              <TableCell key={cell.id}>
+                {flexRender(cell.column.columnDef.cell, cell.getContext())}
+              </TableCell>
+            ))}
+          </TableRow>
+        ))}
+      </TableBody>
+    </Table>
+  )
+}
+
+function RunTypeLabel({ children }: { children: React.ReactNode }) {
+  return <p className="mb-2 text-sm">{children}</p>
+}
 
 function ChallengeRunCard({ challenge }: { challenge: ChallengeRun }) {
   return (
     <Card>
       <CardHeader>
-        <div className="flex items-start justify-between gap-3">
+        <div className="flex justify-between gap-3">
           <div className="space-y-1">
-            <CardTitle className="text-lg">{challenge.name}</CardTitle>
+            <CardTitle className="text-lg">{challenge.label}</CardTitle>
             <CardDescription className="leading-relaxed">
               {challenge.description}
             </CardDescription>
           </div>
-          <Trophy className="size-5 shrink-0 text-muted-foreground" />
+          <Trophy className="text-muted-foreground" />
         </div>
       </CardHeader>
-      <CardContent className="border-t pt-4">
-        <div className="space-y-2">
-          {challenge.submissions.map((sub) => (
-            <div
-              className="flex items-center justify-between rounded-lg bg-muted/50 px-3 py-2"
-              key={sub.rank}
-            >
-              <div className="flex items-center gap-3">
-                <span className="border-r px-1 font-medium text-muted-foreground text-sm tabular-nums">
-                  #{sub.rank}
-                </span>
-                <span className="font-medium text-foreground text-sm">
-                  {sub.name}
-                </span>
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="border-r px-1 text-muted-foreground text-sm tabular-nums">
-                  {sub.time}
-                </span>
-                <span className="text-muted-foreground text-sm tabular-nums">
-                  {sub.score}
-                </span>
-                {sub.clipUrl && (
-                  <a
-                    className="text-muted-foreground hover:text-foreground"
-                    href={sub.clipUrl}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    <ExternalLink className="size-3" />
-                  </a>
-                )}
-              </div>
-            </div>
-          ))}
+      <CardContent>
+        <div className="space-y-6">
+          <div>
+            <RunTypeLabel>Unseeded</RunTypeLabel>
+            <SubmissionTable
+              challengeName={challenge.label}
+              rankingMetric={challenge.rankingMetric}
+              submissions={challenge.unseeded}
+            />
+          </div>
+          <div>
+            <RunTypeLabel>Seeded</RunTypeLabel>
+            <SubmissionTable
+              challengeName={challenge.label}
+              rankingMetric={challenge.rankingMetric}
+              submissions={challenge.seeded}
+            />
+          </div>
         </div>
       </CardContent>
     </Card>
@@ -133,18 +302,16 @@ export const Route = createFileRoute("/leaderboards")({
 
 function ChallengeRuns() {
   return (
-    <div className="mx-auto max-w-2xl items-center space-y-8 px-4 py-8">
-      <div>
-        <h2 className="font-bold text-3xl text-foreground">
-          Month-Long Challenge Runs
-        </h2>
-        <p className="mt-1 text-muted-foreground">
-          <Link params={{ _splat: "challenge-runs" }} to="/docs/$">
-            Submit your runs
-          </Link>{" "}
-          throughout June for a chance to be on the leaderboard!
-        </p>
-      </div>
+    <div className="mx-auto max-w-2xl py-8">
+      <h2 className="font-bold text-3xl text-foreground">
+        Month-Long Challenge Runs
+      </h2>
+      <p className="mt-1 text-muted-foreground">
+        <Link params={{ _splat: "challenge-runs" }} to="/docs/$">
+          Submit your runs
+        </Link>{" "}
+        throughout June for a chance to be on the leaderboard!
+      </p>
       <div className="space-y-4">
         {challengeRuns.map((challenge) => (
           <ChallengeRunCard challenge={challenge} key={challenge.id} />
