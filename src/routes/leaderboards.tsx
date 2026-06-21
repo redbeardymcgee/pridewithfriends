@@ -1,19 +1,19 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router"
 import {
   createColumnHelper,
   flexRender,
   getCoreRowModel,
   useReactTable,
-} from "@tanstack/react-table";
-import { ExternalLink, Medal, Trophy } from "lucide-react";
-import { useMemo } from "react";
+} from "@tanstack/react-table"
+import { ExternalLink, Medal, Trophy } from "lucide-react"
+import { useMemo } from "react"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "#/components/ui/card";
+} from "#/components/ui/card"
 import {
   Table,
   TableBody,
@@ -21,27 +21,27 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "#/components/ui/table";
+} from "#/components/ui/table"
 
-type RankingMetric = "score" | "percentage" | "gold" | "time";
+type RankingMetric = "score" | "percentage" | "gold" | "time"
 
 interface ChallengeSubmission {
-  rank: number;
-  player: string;
-  clipUrl?: string;
-  score?: number;
-  time?: string;
-  percentage?: number;
-  gold?: number;
+  rank: number
+  player: string
+  clipUrl?: string
+  score?: number
+  time?: string
+  percentage?: number
+  gold?: number
 }
 
 interface ChallengeRun {
-  id: number;
-  label: string;
-  description: string;
-  rankingMetric: RankingMetric;
-  seeded: ChallengeSubmission[];
-  unseeded: ChallengeSubmission[];
+  id: number
+  label: string
+  description: string
+  rankingMetric: RankingMetric
+  seeded: ChallengeSubmission[]
+  unseeded: ChallengeSubmission[]
 }
 
 const METRIC_LABELS: Record<RankingMetric, string> = {
@@ -49,7 +49,7 @@ const METRIC_LABELS: Record<RankingMetric, string> = {
   percentage: "Glam %",
   score: "Score",
   time: "Time",
-};
+}
 
 // TODO: Take submissions by form instead. Blocked on DB integration.
 const challengeRuns: ChallengeRun[] = [
@@ -127,18 +127,18 @@ const challengeRuns: ChallengeRun[] = [
       { player: "TBD", rank: 3, time: "TBD" },
     ],
   },
-];
+]
 
 function getRowClassName(rank: number) {
   switch (rank) {
     case 1:
-      return "bg-yellow-500/10 hover:bg-yellow-500/15";
+      return "bg-yellow-500/10 hover:bg-yellow-500/15"
     case 2:
-      return "bg-gray-500/10 hover:bg-gray-500/15";
+      return "bg-gray-500/10 hover:bg-gray-500/15"
     case 3:
-      return "bg-orange-500/10 hover:bg-orange-500/15";
+      return "bg-orange-500/10 hover:bg-orange-500/15"
     default:
-      return "";
+      return ""
   }
 }
 
@@ -150,36 +150,36 @@ function RankCell({ rank }: { rank: number }) {
           <Medal className="size-3" />
           <span>1</span>
         </span>
-      );
+      )
     case 2:
       return (
         <span className="flex items-center gap-1 text-gray-400">
           <Medal className="size-3" />
           <span>2</span>
         </span>
-      );
+      )
     case 3:
       return (
         <span className="flex items-center gap-1 text-orange-600">
           <Medal className="size-3" />
           <span>3</span>
         </span>
-      );
+      )
     default:
-      return <span>#{rank}</span>;
+      return <span>#{rank}</span>
   }
 }
 
-const columnHelper = createColumnHelper<ChallengeSubmission>();
+const columnHelper = createColumnHelper<ChallengeSubmission>()
 
 function SubmissionTable({
   challengeName,
   rankingMetric,
   submissions,
 }: {
-  challengeName: string;
-  rankingMetric: RankingMetric;
-  submissions: ChallengeSubmission[];
+  challengeName: string
+  rankingMetric: RankingMetric
+  submissions: ChallengeSubmission[]
 }) {
   const metricColumn = useMemo(
     () =>
@@ -187,7 +187,7 @@ function SubmissionTable({
         header: METRIC_LABELS[rankingMetric],
       }),
     [rankingMetric],
-  );
+  )
 
   const columns = useMemo(
     () => [
@@ -201,8 +201,8 @@ function SubmissionTable({
       metricColumn,
       columnHelper.display({
         cell: (info) => {
-          const { player, rank, clipUrl } = info.row.original;
-          if (!clipUrl) return null;
+          const { player, rank, clipUrl } = info.row.original
+          if (!clipUrl) return null
           return (
             <a
               aria-label={`Watch ${player}'s ${challengeName} clip for rank #${rank}`}
@@ -213,20 +213,20 @@ function SubmissionTable({
             >
               <ExternalLink className="size-3" />
             </a>
-          );
+          )
         },
         header: "Clip",
         id: "clip",
       }),
     ],
     [challengeName, metricColumn],
-  );
+  )
 
   const table = useReactTable({
     columns,
     data: submissions,
     getCoreRowModel: getCoreRowModel(),
-  });
+  })
 
   return (
     <Table>
@@ -256,11 +256,11 @@ function SubmissionTable({
         ))}
       </TableBody>
     </Table>
-  );
+  )
 }
 
 function RunTypeLabel({ children }: { children: React.ReactNode }) {
-  return <p className="mb-2 text-sm">{children}</p>;
+  return <p className="mb-2 text-sm">{children}</p>
 }
 
 function ChallengeRunCard({ challenge }: { challenge: ChallengeRun }) {
@@ -298,12 +298,12 @@ function ChallengeRunCard({ challenge }: { challenge: ChallengeRun }) {
         </div>
       </CardContent>
     </Card>
-  );
+  )
 }
 
 export const Route = createFileRoute("/leaderboards")({
   component: ChallengeRuns,
-});
+})
 
 function ChallengeRuns() {
   return (
@@ -323,5 +323,5 @@ function ChallengeRuns() {
         ))}
       </div>
     </div>
-  );
+  )
 }
