@@ -76,3 +76,16 @@ export function ContactHandle({ children, className }: TextProps) {
     </span>
   )
 }
+
+export function ProseText({ children, className }: TextProps) {
+  return (
+    <p
+      className={cn(
+        "m-0 max-w-3xl text-(--sea-ink-soft) text-base text-shadow-blue-800 text-shadow-sm leading-relaxed",
+        className,
+      )}
+    >
+      {children}
+    </p>
+  )
+}
