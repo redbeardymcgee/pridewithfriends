@@ -4,6 +4,7 @@ import { createFileRoute, notFound } from "@tanstack/react-router"
 import { allDocs } from "content-collections"
 import { Folder, Plus } from "lucide-react"
 import {
+  ContactHandle,
   ExampleText,
   PrideGradient,
   TutorialText,
@@ -13,6 +14,7 @@ import { CurrentYear } from "#/components/utils"
 
 const components = {
   ...mdxComponents,
+  ContactHandle,
   CurrentYear,
   ExampleText,
   Folder,

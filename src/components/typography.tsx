@@ -63,3 +63,16 @@ export function PrideGradient({ children, className }: TextProps) {
     </span>
   )
 }
+
+export function ContactHandle({ children, className }: TextProps) {
+  return (
+    <span
+      className={cn(
+        "rounded-full bg-primary/10 px-1 py-1 font-medium text-primary text-xs",
+        className,
+      )}
+    >
+      {children}
+    </span>
+  )
+}
