@@ -108,7 +108,7 @@ const events: Event[] = [
     date: "2026-06-28T02:00:00Z",
     description:
       "Players compete to enchant the highest percentage of their deck with Glam",
-    hosts: [{ name: "vmService" }, { name: "Nalei" }],
+    hosts: [{ name: "vmService" }, { name: "Nalei_" }],
     name: "BIG GLAM GAY SEED",
     participants: [],
   },
