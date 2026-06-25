@@ -36,7 +36,7 @@ const events: Event[] = [
     date: "2026-06-26T14:00:00Z",
     description: "Coop speedrun quarterfinals 3",
     hosts: [{ name: "hellofmira" }, { name: "Merl61" }],
-    name: "Coop Speedrun Quarterfinals 1",
+    name: "Coop Speedrun Quarterfinals 3",
     participants: [],
   },
   {
@@ -50,7 +50,7 @@ const events: Event[] = [
     date: "2026-06-26T22:00:00Z",
     description: "Coop speedrun quarterfinals 4",
     hosts: [{ name: "hellofmira" }, { name: "Merl61" }],
-    name: "Coop Speedrun Quarterfinals 2",
+    name: "Coop Speedrun Quarterfinals 4",
     participants: [],
   },
   {
@@ -76,9 +76,9 @@ const events: Event[] = [
   },
   {
     date: "2026-06-27T18:00:00Z",
-    description: "Coop speedrun semifinals 3",
+    description: "Coop speedrun semifinals 1",
     hosts: [{ name: "hellofmira" }, { name: "Merl61" }],
-    name: "Coop Speedrun Semifinals 3",
+    name: "Coop Speedrun Semifinals 1",
     participants: [],
   },
   {
@@ -91,9 +91,9 @@ const events: Event[] = [
   },
   {
     date: "2026-06-27T22:00:00Z",
-    description: "Coop speedrun semifinals 4",
+    description: "Coop speedrun semifinals 2",
     hosts: [{ name: "hellofmira" }, { name: "Merl61" }],
-    name: "Coop Speedrun Semifinals 4",
+    name: "Coop Speedrun Semifinals 2",
     participants: [],
   },
   {
