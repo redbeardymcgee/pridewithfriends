@@ -76,7 +76,7 @@ const events: Event[] = [
   },
   {
     date: "2026-06-27T18:00:00Z",
-    description: "Coop speedrun semifinals 1",
+    description: "Coop speedrun semifinals 3",
     hosts: [{ name: "hellofmira" }, { name: "Merl61" }],
     name: "Coop Speedrun Semifinals 1",
     participants: [],
@@ -91,7 +91,7 @@ const events: Event[] = [
   },
   {
     date: "2026-06-27T22:00:00Z",
-    description: "Coop speedrun semifinals 2",
+    description: "Coop speedrun semifinals 4",
     hosts: [{ name: "hellofmira" }, { name: "Merl61" }],
     name: "Coop Speedrun Semifinals 2",
     participants: [],
