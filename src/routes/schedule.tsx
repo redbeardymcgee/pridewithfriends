@@ -122,7 +122,7 @@ const events: Event[] = [
   {
     date: "2026-06-28T07:00:00Z",
     description: "A friendly seeded STS2 Defect run",
-    hosts: [{ name: "jmacsts" }],
+    hosts: [{ name: "jmac_sts" }],
     name: "Open registration Defect seed",
     participants: [],
   },
