@@ -42,7 +42,7 @@ const events: Event[] = [
   {
     date: "2026-06-26T18:00:00Z",
     description: "A friendly seeded STS2 Regent run",
-    hosts: [{ name: "Baalorlord" }],
+    hosts: [{ name: "Baalorlord" }, { name: "MidMillenial" }],
     name: "Open registration Regent seed",
     participants: [],
   },
