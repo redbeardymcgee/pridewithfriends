@@ -122,7 +122,7 @@ const challengeRuns: ChallengeRun[] = [
       { player: "TBD", rank: 3, time: "TBD" },
     ],
     unseeded: [
-      { player: "TBD", rank: 1, time: "TBD" },
+      { player: "Jack McNally", rank: 1, time: "3:12:34", clipUrl: "https://www.youtube.com/watch?v=-rmOijXrwGw" },
       { player: "TBD", rank: 2, time: "TBD" },
       { player: "TBD", rank: 3, time: "TBD" },
     ],
