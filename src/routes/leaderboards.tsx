@@ -70,7 +70,7 @@ const challengeRuns: ChallengeRun[] = [
         rank: 1,
         score: 3470,
       },
-      { player: "TBD", rank: 2, score: 0 },
+      { player: "k0v00", rank: 2, score: 3392, clipUrl: "https://www.twitch.tv/videos/2806941701" },
       { player: "TBD", rank: 3, score: 0 },
     ],
   },
