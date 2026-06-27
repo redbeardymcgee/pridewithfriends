@@ -80,7 +80,7 @@ const challengeRuns: ChallengeRun[] = [
     label: "Get Glamourous",
     rankingMetric: "percentage",
     seeded: [
-      { percentage: 0, player: "TBD", rank: 1 },
+      { percentage: 100, player: "tckmn_", rank: 1, clipUrl: "https://www.youtube.com/watch?v=gTEcJQQZD7I"},
       { percentage: 0, player: "TBD", rank: 2 },
       { percentage: 0, player: "TBD", rank: 3 },
     ],
@@ -96,7 +96,7 @@ const challengeRuns: ChallengeRun[] = [
     label: "Luxury Gay Space",
     rankingMetric: "gold",
     seeded: [
-      { gold: 0, player: "TBD", rank: 1 },
+      { gold: 78741, player: "tckmn_", rank: 1, clipUrl: "https://www.twitch.tv/videos/2806422870"},
       { gold: 0, player: "TBD", rank: 2 },
       { gold: 0, player: "TBD", rank: 3 },
     ],
