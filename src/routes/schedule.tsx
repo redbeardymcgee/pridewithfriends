@@ -77,7 +77,7 @@ const events: Event[] = [
   {
     date: "2026-06-27T18:00:00Z",
     description: "Coop speedrun semifinals 1",
-    hosts: [{ name: "hellofmira" }, { name: "Merl61" }],
+    hosts: [{ name: "hellofmira" }, { name: "Veluff" }],
     name: "Coop Speedrun Semifinals 1",
     participants: [],
   },
@@ -143,9 +143,9 @@ const events: Event[] = [
   },
   {
     date: "2026-06-28T18:00:00Z",
-    description: "2v2 speedrun to determine 3rd place winner",
-    hosts: [{ name: "hellofmira" }, { name: "Merl61" }],
-    name: "Coop Speedrun 3rd Place",
+    description: "Coop speedrun Grand Finals",
+    hosts: [{ name: "hellofmira" }, { name: "Veluff" }],
+    name: "Coop Speedrun Grand Final",
     participants: [],
   },
   {
@@ -155,17 +155,17 @@ const events: Event[] = [
     name: "bookshelf2029 Draws the Spire",
     participants: [],
   },
-  {
-    date: "2026-06-28T22:00:00Z",
-    description: "Coop speedrun Grand Finals",
-    hosts: [{ name: "hellofmira" }, { name: "Merl61" }],
-    name: "Coop Speedrun Grand Final",
-    participants: [],
-  },
+  // {
+  //   date: "2026-06-28T22:00:00Z",
+  //   description: "4-player coop speedrun showcase",
+  //   hosts: [{ name: "hellofmira" } ],
+  //   name: "Coop Speedrun 3rd Place",
+  //   participants: [{name: "Nalei_"}, {name: "Veluff"}],
+  // },
   {
     date: "2026-06-29T00:00:00Z",
     description:
-      "A thoughtful review of the nostalgia and time we shared with the original Slay the Spire.",
+      "A thoughtful review of the nostalgia and time we shared with the original Slay the Spire",
     hosts: [
       { name: "Xecnar" },
       { name: "Onepunman_" },
